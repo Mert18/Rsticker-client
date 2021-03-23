@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Home from './components/Home';
+import Home from './components/screens/Home';
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import { NavLink } from "react-router-dom";
@@ -53,15 +53,15 @@ const App = () => {
                     </div>
                 </div>
                 :
-                <div className="relative w-screen">
-                    <div className="w-screen">
+                <div className="overflow-x-hidden">
+                    <div className="relative w-screen">
                         <Switch>
                             <Route path="/" exact component={Home} />
                             <Route path="/signin" component={SignIn} />
                             <Route path="/signup" component={SignUp} />
                         </Switch>
 
-                        <div className="sticky left-full bg-pink-200 text-black w-12 h-11 text-center text-3xl cursor-pointer inset-y-20" onClick={handleSidebar}>
+                        <div className="absolute top-0 left-3/4 bg-pink-200 text-black w-12 h-11 text-center text-3xl cursor-pointer inset-y-20" onClick={handleSidebar}>
                             &#8592;
                         </div>
                     </div>
