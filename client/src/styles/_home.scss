@@ -1,0 +1,27 @@
+
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    &__sidebar {
+        grid-column: 1 / 5;
+    }
+    &__content {
+        grid-column: 5 / 15;
+    }
+    &__footer {
+        grid-column: 1 / 15;
+    }
+}
+
+
+.home {
+    background-color: $color-plat;
+
+    &__content {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
