@@ -12,6 +12,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
+import ProductScreen from './components/screens/ProductScreen';
 
 const App = () => {
     return (
@@ -26,6 +27,7 @@ const App = () => {
                         <Route path="/" exact component={Home} />
                         <Route path="/signin" component={SignIn} />
                         <Route path="/signup" component={SignUp} />
+                        <Route path="/product/:id" component={ProductScreen} />
                     </Switch>
                 </div>
 
