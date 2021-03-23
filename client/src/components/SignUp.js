@@ -2,22 +2,24 @@ import React from 'react'
 
 const SignUp = () => {
     return (
-        <div className="">
-            <h2 className="">Kayıt Ol</h2>
-            <form className="" autoComplete="off">
-                <div className="">
-                    <label className="" htmlFor="email">E-mail</label>
-                    <input className="" type="text" id="email" />
-                </div>
-                <div className="">
-                    <label className="" htmlFor="password">Parola</label>
-                    <input className="" type="text" id="password" />
-                </div>
+        <div className="signup">
 
-                <button className="" type="submit">Kayıt Ol</button>
+            <div className="signup__title">
+                <h2>Kayıt Ol</h2>
+            </div>
 
+            <form className="signup__form" autoComplete="off">
+                <div className="signup__form__element">
+                    <label htmlFor="email">E-mail</label>
+                    <input type="text" id="email" />
+                </div>
+                <div className="signup__form__element">
+                    <label htmlFor="password">Parola</label>
+                    <input type="password" id="password" />
+                </div>
+                <button type="submit">Kayıt Ol</button>
             </form>
-        </div >
+        </div>
     )
 }
 

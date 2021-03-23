@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Header from '../Header';
-import products from '../products'
+import products from '../../products'
 import Product from '../Product'
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
 
             <div className="home__content">
                 {products.map((product) => (
-                    <Product product={product} />
+                    <Product key={product._id} product={product} />
                 ))}
             </div>
 

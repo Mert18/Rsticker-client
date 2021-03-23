@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Rating from './Rating';
+
 const Product = ({ product }) => {
 
     return (
@@ -12,7 +14,7 @@ const Product = ({ product }) => {
                 <h3><strong>{product.name}</strong></h3>
 
                 <div>
-                    <h4>{product.numReviews} değerlendirme için {product.rating} </h4>
+                    <Rating value={product.rating} text={`${product.numReviews} değerlendirme`} />
                 </div>
             </a>
         </div>

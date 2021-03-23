@@ -1,0 +1,45 @@
+
+.signup {
+    height: 80vh;
+    background-color: $color-plat;
+    &__title {
+        font-size: 3rem;
+        padding: 2rem;
+    }
+
+    &__form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &__element {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+            input {
+                height: 3rem;
+                width: 22rem;
+                background-color: $color-3;
+                color: white;
+                text-align: center;
+                font-size: 1.2rem;
+                border: none;
+            }
+            label {
+                top: 0;
+                left: 0;
+                font-size: 1.2rem;
+            }
+        }
+        button {
+            height: 3rem;
+            width: 9rem;
+            background-color: $color-4;
+            color: white;
+            font-weight: 600;
+            border: none;
+        }
+    }
+}

@@ -2,22 +2,24 @@ import React from 'react'
 
 const SignIn = () => {
     return (
-        <div className="">
-            <h2 className="">Giriş Yap</h2>
-            <form className="" autoComplete="off">
-                <div className="">
-                    <label className="" htmlFor="email">E-mail</label>
-                    <input className="" type="text" id="email" />
-                </div>
-                <div className="">
-                    <label className="" htmlFor="password">Parola</label>
-                    <input className="" type="text" id="password" />
-                </div>
+        <div className="signin">
 
-                <button className="" type="submit">Giriş Yap</button>
+            <div className="signin__title">
+                <h2>Giriş Yap</h2>
+            </div>
 
+            <form className="signin__form" autoComplete="off">
+                <div className="signin__form__element">
+                    <label htmlFor="email">E-mail</label>
+                    <input type="text" id="email" />
+                </div>
+                <div className="signin__form__element">
+                    <label htmlFor="password">Parola</label>
+                    <input type="password" id="password" />
+                </div>
+                <button type="submit">Giriş Yap</button>
             </form>
-        </div >
+        </div>
     )
 }
 
