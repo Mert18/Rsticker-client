@@ -1,7 +1,6 @@
 
 const products = [
     {
-        _id: '1',
         name: 'Linux Maskot',
         image: '/images/tux.png',
         category: 'Computer',
@@ -11,7 +10,6 @@ const products = [
         numReviews: 2
     },
     {
-        _id: '2',
         name: 'Linux Maskot',
         image: '/images/tux.png',
         category: 'Computer',
@@ -21,7 +19,6 @@ const products = [
         numReviews: 2
     },
     {
-        _id: '3',
         name: 'Linux Maskot',
         image: '/images/tux.png',
         category: 'Computer',
@@ -32,4 +29,4 @@ const products = [
     },
 ];
 
-export default products;
+export default products
