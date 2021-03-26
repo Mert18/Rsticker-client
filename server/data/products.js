@@ -25,7 +25,7 @@ const products = [
         price: 2.5,
         countInStock: 251,
         rating: 2.5,
-        numReviews: 2
+        numReviews: 6
     },
 ];
 

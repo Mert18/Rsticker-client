@@ -18,10 +18,19 @@
 
 .home {
     background-color: $color-plat;
-
     &__content {
-        padding: 2rem;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        width: auto;
+        height: auto;
+        min-height: 100vh;
+
     }
+}
+
+.containertwo {
+    width: 100%;
 }

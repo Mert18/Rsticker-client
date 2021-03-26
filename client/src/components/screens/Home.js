@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
-import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Header from '../Header';
-import Product from '../Product'
+import Header from '../Header.js';
+import Product from '../Product.js'
 import { listProducts } from '../../actions/productActions.js';
 
 const Home = () => {
