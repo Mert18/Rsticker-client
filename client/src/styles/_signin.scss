@@ -1,7 +1,7 @@
 
 .signin {
     min-height: 100vh;
-    background-color: $color-plat;
+    background-color: $color-white-base;
     &__title {
         font-size: 3rem;
         padding: 2rem;
@@ -17,26 +17,27 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
             input {
                 height: 3rem;
                 width: 22rem;
-                background-color: $color-3;
-                color: white;
                 text-align: center;
-                font-size: 1.2rem;
+                font-size: 1rem;
                 border: none;
+                background-color: $color-white-1;
             }
             label {
-                top: 0;
-                left: 0;
-                font-size: 1.2rem;
+                position: absolute;
+                top: -20px;
+                left: 0px;
+                font-size: 1rem;
             }
         }
         button {
             height: 3rem;
             width: 9rem;
-            background-color: $color-4;
+            background-color: $color-1;
             color: white;
             font-weight: 600;
             border: none;

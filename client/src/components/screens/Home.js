@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
-import Header from '../Header.js';
 import Product from '../Product.js'
 import { listProducts } from '../../actions/productActions.js';
 
@@ -18,10 +17,6 @@ const Home = () => {
 
     return (
         <div className="home" >
-            <div className="home__header">
-                <Header />
-            </div>
-
             <div className="home__content">
                 {products.map((product) => (
                     <Product key={product._id} product={product} />
