@@ -1,7 +1,9 @@
 
 .signin {
     min-height: 100vh;
-    background-color: $color-white-base;
+    background-color: $color-1;
+    color: $color-2;
+    
     &__title {
         font-size: 3rem;
         padding: 2rem;

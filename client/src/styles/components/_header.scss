@@ -1,0 +1,89 @@
+
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    &__logo {
+        margin-left: 2rem;
+        color: $color-2;
+    }
+    &__nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    a {
+        color: $color-2;
+        text-decoration: none;
+        font-size: 1rem;
+        margin-right: 3rem;
+        &:last-child{
+            margin-right: 0rem;
+        }
+        &:hover {
+            color: rgb(219, 159, 159);
+        }
+    }
+}
+
+
+.hero {
+    background-size: cover;
+    font-size: 3rem;
+    position: relative;
+    z-index: 998;
+    padding: 4rem;
+    height: 70vh;
+    &__text {
+        button {
+            padding: 1rem;
+            font-size: 1.3rem;
+            background: transparent;
+            border: none;
+            transition: all .5s;
+            color: $color-2;
+            &:hover {
+                transition: all .5s;
+                transform: scale(1.04);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.categories {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    z-index: 999;
+    display: grid;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__header {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+    }
+    &__title {
+        color: $color-2;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+
+    }
+    &__category {
+        padding: 2rem;
+        border-right: 2px solid $color-2;
+        &:last-child {
+            border-right: 0px;
+        }
+    }
+}

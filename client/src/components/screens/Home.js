@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
-import Product from '../Product.js'
 import { listProducts } from '../../actions/productActions.js';
+import Hero from '../Hero';
 
 const Home = () => {
 
@@ -17,14 +17,9 @@ const Home = () => {
 
     return (
         <div className="home" >
-            <div className="home__content">
-                {products.map((product) => (
-                    <Product key={product._id} product={product} />
-                ))}
+            <div className="home__hero">
+                <Hero />
             </div>
-
-
-
         </div>
     )
 }
