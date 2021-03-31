@@ -13,6 +13,7 @@ import {
 import ProductScreen from './components/screens/ProductScreen.js';
 import CartScreen from './components/screens/CartScreen.js';
 import ShippingScreen from './components/screens/ShippingScreen.js';
+import ProfileScreen from './components/screens/ProfileScreen.js';
 import PaymentScreen from './components/screens/PaymentScreen.js';
 import PlaceOrderScreen from './components/screens/PlaceOrderScreen.js';
 import Navbar from './components/Navbar';
@@ -32,6 +33,7 @@ const App = () => {
                         <Route path="/signin" component={SignIn} />
                         <Route path="/signup" component={SignUp} />
                         <Route path="/placeorder" component={PlaceOrderScreen} />
+                        <Route path="/profile" component={ProfileScreen} />
                         <Route path="/shipping" component={ShippingScreen} />
                         <Route path="/payment" component={PaymentScreen} />
                         <Route path="/category/:id" component={CategoryScreen} />

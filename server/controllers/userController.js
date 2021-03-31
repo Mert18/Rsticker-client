@@ -8,9 +8,7 @@ import generateToken from '../utils/generateToken.js';
 // @route POST /api/users/login
 // @access Public
 const authUser = asyncHandler(async (req, res) => {
-
     const { email, password } = req.body;
-
     const user = await User.findOne({ email });
 
     if (user && (await user.matchPassword(password))) {
@@ -23,7 +21,7 @@ const authUser = asyncHandler(async (req, res) => {
         })
     } else {
         res.status(401);
-        throw new Error('Invalid email or password');
+        throw new Error('Geçersiz email ya da şifre.');
     }
 })
 
@@ -31,7 +29,6 @@ const authUser = asyncHandler(async (req, res) => {
 // @route POST /api/users/profile
 // @access Private
 const getUserProfile = asyncHandler(async (req, res) => {
-
     const user = await User.findById(req.user._id);
 
     if (user) {
@@ -47,11 +44,11 @@ const getUserProfile = asyncHandler(async (req, res) => {
     }
 })
 
+
 // @desc Register a new user
 // @route POST /api/users
 // @access Public
 const registerUser = asyncHandler(async (req, res) => {
-
     const { name, email, password } = req.body;
 
     const userExists = await User.findOne({ email });

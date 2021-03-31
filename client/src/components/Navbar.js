@@ -1,7 +1,16 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../actions/userActions.js';
 
-const Navbar = (props) => {
+const Navbar = () => {
+    const dispatch = useDispatch();
+    const userLogin = useSelector(state => state.userLogin)
+    const { userInfo } = userLogin;
+
+    const logoutHandler = () => {
+        dispatch(logout())
+    }
 
     const [open, setOpen] = useState(false);
     return (
@@ -72,13 +81,22 @@ const Navbar = (props) => {
                         </div>
 
                     </div>}
+                {userInfo ?
+                    (
+                        <div className="navbar__nav__right">
+                            <ul>
+                                <NavLink to="/profile">{userInfo.name}</NavLink>
+                                <NavLink to="/" onClick={logoutHandler}>Çıkış Yap</NavLink>
+                            </ul>
+                        </div>
+                    ) :
+                    <div className="navbar__nav__right">
+                        <ul>
+                            <NavLink to="/signup">Kayıt Ol</NavLink>
+                            <NavLink to="/signin">Giriş Yap</NavLink>
+                        </ul>
+                    </div>}
 
-                <div className="navbar__nav__right">
-                    <ul>
-                        <NavLink to="/signup">Kayıt Ol</NavLink>
-                        <NavLink to="/signin">Giriş Yap</NavLink>
-                    </ul>
-                </div>
             </div>
         </header>
     )
