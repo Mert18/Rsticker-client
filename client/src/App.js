@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Home from './components/screens/Home';
 import SignIn from './components/SignIn'

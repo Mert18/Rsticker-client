@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getOrderDetails } from '../../actions/orderActions.js';
@@ -11,6 +11,7 @@ const OrderScreen = ({ match }) => {
     const dispatch = useDispatch();
 
     const orderDetails = useSelector = useSelector((state) => state.orderDetails);
+    // eslint-disable-next-line no-unused-vars
     const { order, loading, error } = orderDetails
 
     const addDecimals = (num) => {
@@ -31,6 +32,7 @@ const OrderScreen = ({ match }) => {
     return (
         <div>
             <div>
+                {error && { error }}
                 <h2>Kargo</h2>
                 <p><strong>İsim: </strong> {order.user.name}</p>
                 <p>

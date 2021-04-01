@@ -9,6 +9,7 @@ const ProductScreen = ({ history, match }) => {
     const dispatch = useDispatch();
 
     const productDetails = useSelector(state => state.productDetails);
+    // eslint-disable-next-line no-unused-vars
     const { loading, error, product } = productDetails
     useEffect(() => {
 
@@ -21,6 +22,7 @@ const ProductScreen = ({ history, match }) => {
 
     return (
         <div className="singleproduct">
+            {error && { error }}
             <div className="singleproduct__back">
                 <Link to="/">Geri Dön</Link>
             </div>

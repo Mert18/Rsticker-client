@@ -7,15 +7,16 @@ import { listMyOrders } from '../../actions/orderActions.js';
 
 const ProfileScreen = ({ history }) => {
 
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
-    const [confirmPassword, setConfirmPassword] = useState()
-    const [message, setMessage] = useState('')
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
+    const [message, setMessage] = useState("")
 
     const dispatch = useDispatch();
 
     const userDetails = useSelector((state) => state.userDetails);
+    // eslint-disable-next-line no-unused-vars
     const { loading, error, user } = userDetails;
 
     const userLogin = useSelector((state) => state.userLogin);
@@ -25,6 +26,7 @@ const ProfileScreen = ({ history }) => {
     const { success } = userUpdateProfile;
 
     const orderListMy = useSelector((state) => state.orderListMy);
+    // eslint-disable-next-line no-unused-vars
     const { loading: loadingOrders, error: errorOrders, orders } = orderListMy;
 
     useEffect(() => {
@@ -52,33 +54,37 @@ const ProfileScreen = ({ history }) => {
     }
 
     return (
-        <div>
+        <div className="profile">
             {message}
             {success}
-            <form className="signup__form" autoComplete="off" onSubmit={submitHandler}>
-                <div className="signup__form__element">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
-                </div>
+            {error && { error }}
+            <div className="profile__left">
+                <h2>Bilgilerini Güncelle</h2>
+                <form className="update__form" autoComplete="off" onSubmit={submitHandler}>
+                    <div className="update__form__element">
+                        <label htmlFor="name">Name</label>
+                        <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+                    </div>
 
-                <div className="signup__form__element">
-                    <label htmlFor="email">E-mail</label>
-                    <input type="text" id="email" value={email} onChange={(e) => { setEmail(e.target.value) }} />
-                </div>
+                    <div className="update__form__element">
+                        <label htmlFor="email">E-mail</label>
+                        <input type="text" id="email" value={email} onChange={(e) => { setEmail(e.target.value) }} />
+                    </div>
 
-                <div className="signup__form__element">
-                    <label htmlFor="password">Parola</label>
-                    <input type="password" id="password" value={password} onChange={(e) => { setPassword(e.target.value) }} />
-                </div>
+                    <div className="update__form__element">
+                        <label htmlFor="password">Parola</label>
+                        <input type="password" id="password" value={password} onChange={(e) => { setPassword(e.target.value) }} />
+                    </div>
 
-                <div className="signup__form__element">
-                    <label htmlFor="conpassword">Yeniden Parola</label>
-                    <input type="password" id="conpassword" value={confirmPassword} onChange={(e) => { setConfirmPassword(e.target.value) }} />
-                </div>
-                <button type="submit">Güncelle</button>
-            </form>
+                    <div className="update__form__element">
+                        <label htmlFor="conpassword">Yeniden Parola</label>
+                        <input type="password" id="conpassword" value={confirmPassword} onChange={(e) => { setConfirmPassword(e.target.value) }} />
+                    </div>
+                    <button type="submit">Güncelle</button>
+                </form>
+            </div>
 
-            <div>
+            <div className="profile__right">
                 <h2>Siparişler</h2>
                 <div>
                     {orders ? orders.map(order => (

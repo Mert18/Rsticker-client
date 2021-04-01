@@ -38,6 +38,8 @@ const SignUp = ({ location, history }) => {
             </div>
             {message && { message }}
             {error && { error }}
+            {loading && { loading }}
+
 
             <form className="signup__form" autoComplete="off" onSubmit={submitHandler}>
                 <div className="signup__form__element">

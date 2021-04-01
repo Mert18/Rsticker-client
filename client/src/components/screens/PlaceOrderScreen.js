@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { createOrder } from '../../actions/orderActions.js';
@@ -47,6 +47,7 @@ const PlaceOrderScreen = ({ history }) => {
 
     return (
         <div>
+            {error && { error }}
             <div>
                 <h2>Kargo</h2>
                 <p>

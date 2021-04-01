@@ -32,6 +32,7 @@ const SignIn = ({ location, history }) => {
             </div>
 
             {error && <h1>{error}</h1>}
+            {loading && <h1>{loading}</h1>}
             <form className="signin__form" autoComplete="off" onSubmit={submitHandler}>
                 <div className="signin__form__element">
                     <label htmlFor="email" >E-mail</label>

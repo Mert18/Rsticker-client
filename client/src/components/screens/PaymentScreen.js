@@ -11,6 +11,7 @@ const PaymentScreen = ({ history }) => {
         history.push('/shipping')
     }
 
+    // eslint-disable-next-line no-unused-vars
     const [paymentMethod, setPaymentMethod] = useState('');
 
     const dispatch = useDispatch();
