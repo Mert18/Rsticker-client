@@ -1,7 +1,9 @@
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { getUserDetails, updateUserProfile } from '../../actions/userActions.js';
+import { listMyOrders } from '../../actions/orderActions.js';
 
 const ProfileScreen = ({ history }) => {
 
@@ -22,12 +24,16 @@ const ProfileScreen = ({ history }) => {
     const userUpdateProfile = useSelector((state) => state.userLogin);
     const { success } = userUpdateProfile;
 
+    const orderListMy = useSelector((state) => state.orderListMy);
+    const { loading: loadingOrders, error: errorOrders, orders } = orderListMy;
+
     useEffect(() => {
         if (!userInfo) {
             history.push('/login');
         } else {
             if (!user.name) {
                 dispatch(getUserDetails('profile'))
+                dispatch(listMyOrders())
             } else {
                 setName(user.name)
                 setEmail(user.email)
@@ -71,6 +77,22 @@ const ProfileScreen = ({ history }) => {
                 </div>
                 <button type="submit">Güncelle</button>
             </form>
+
+            <div>
+                <h2>Siparişler</h2>
+                <div>
+                    {orders ? orders.map(order => (
+                        <div>
+                            <h2>{order._id}</h2>
+                            <p>{order.createdAt.substring(0, 10)}</p>
+                            <p>{order.totalPrice}</p>
+                            <p>{order.isPaid ? <strong>Ödeme Yapıldı.</strong> : <strong>Ödeme Henüz Yapılmadı</strong>}</p>
+                            <p>{order.isDelivered ? <strong>Teslim Edildi.</strong> : <strong>Henüz Teslim Edilmedi.</strong>}</p>
+                            <NavLink to={`/order/${order._id}`}><h2>Göz At</h2></NavLink>
+                        </div>
+                    )) : <h2>Sipariş bulunamadı.</h2>}
+                </div>
+            </div>
         </div>
     )
 }

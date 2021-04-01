@@ -18,6 +18,7 @@ import PaymentScreen from './components/screens/PaymentScreen.js';
 import PlaceOrderScreen from './components/screens/PlaceOrderScreen.js';
 import Navbar from './components/Navbar';
 import CategoryScreen from './components/screens/CategoryScreen.js';
+import OrderScreen from './components/screens/OrderScreen'
 
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
                         <Route path="/category/:id" component={CategoryScreen} />
                         <Route path="/product/:id" component={ProductScreen} />
                         <Route path="/cart/:id?" component={CartScreen} />
+                        <Route path="/order/:id?" component={OrderScreen} />
                         <Route path="/" exact component={Home} />
 
                     </Switch>
