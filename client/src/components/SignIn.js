@@ -36,11 +36,11 @@ const SignIn = ({ location, history }) => {
             <form className="signin__form" autoComplete="off" onSubmit={submitHandler}>
                 <div className="signin__form__element">
                     <label htmlFor="email" >E-mail</label>
-                    <input type="text" id="email" onChange={(e) => setEmail(e.target.value)} />
+                    <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <div className="signin__form__element">
                     <label htmlFor="password" >Parola</label>
-                    <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <button type="submit">Giriş Yap</button>
             </form>

@@ -10,7 +10,7 @@ const OrderScreen = ({ match }) => {
 
     const dispatch = useDispatch();
 
-    const orderDetails = useSelector = useSelector((state) => state.orderDetails);
+    const orderDetails = useSelector((state) => state.orderDetails);
     // eslint-disable-next-line no-unused-vars
     const { order, loading, error } = orderDetails
 

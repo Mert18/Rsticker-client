@@ -85,6 +85,12 @@ const Navbar = () => {
                     (
                         <div className="navbar__nav__right">
                             <ul>
+                                {userInfo.isAdmin && (
+                                    <NavLink to="/admin/userlist">
+                                        Admin Paneli
+                                    </NavLink>
+                                )
+                                }
                                 <NavLink to="/profile">{userInfo.name}</NavLink>
                                 <NavLink to="/" onClick={logoutHandler}>Çıkış Yap</NavLink>
                             </ul>

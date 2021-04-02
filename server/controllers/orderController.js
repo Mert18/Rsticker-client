@@ -11,7 +11,6 @@ const addOrderItems = asyncHandler(async (req, res) => {
     if (orderItems && orderItems.length === 0) {
         res.status(400)
         throw new Error('No order items')
-        return
     } else {
         const order = new Order({
             orderItems,
@@ -34,7 +33,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
 // @access Private
 
 const getOrderById = asyncHandler(async (req, res) => {
-    const order = await (await Order.findById(req.params.id)).populate('user', 'name email')
+    const order = await Order.findById(req.params.id).populate('user', 'name email')
 
     if (order) {
         res.json(order)
@@ -49,7 +48,7 @@ const getOrderById = asyncHandler(async (req, res) => {
 // @route GET /api/orders/:id/pay
 // @access Private
 const updateOrderToPaid = asyncHandler(async (req, res) => {
-    const order = await (await Order.findById(req.params.id));
+    const order = await Order.findById(req.params.id);
 
     if (order) {
         order.isPaid = true
@@ -72,15 +71,24 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
 // @route GET /api/orders/myorders
 // @access Private
 const getMyOrders = asyncHandler(async (req, res) => {
-    const orders = await (await Order.find({ user: req.user._id }));
+    const orders = await Order.find({ user: req.user._id });
 
     res.json(orders)
 })
 
+// @desc Get all orders
+// @route GET /api/orders
+// @access Private/Admin
+const getOrders = asyncHandler(async (req, res) => {
+    const orders = await Order.find({}).populate('user', 'id name');
+
+    res.json(orders)
+})
 
 export {
     addOrderItems,
     getOrderById,
     updateOrderToPaid,
-    getMyOrders
+    getMyOrders,
+    getOrders
 }

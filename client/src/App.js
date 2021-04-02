@@ -16,9 +16,13 @@ import ShippingScreen from './components/screens/ShippingScreen.js';
 import ProfileScreen from './components/screens/ProfileScreen.js';
 import PaymentScreen from './components/screens/PaymentScreen.js';
 import PlaceOrderScreen from './components/screens/PlaceOrderScreen.js';
+import UserListScreen from './components/screens/UserListScreen.js';
 import Navbar from './components/Navbar';
 import CategoryScreen from './components/screens/CategoryScreen.js';
-import OrderScreen from './components/screens/OrderScreen'
+import OrderScreen from './components/screens/OrderScreen.js'
+import ProductListScreen from './components/screens/ProductListScreen.js';
+import ProductEditScreen from './components/screens/ProductEditScreen.js';
+import OrderListScreen from './components/screens/OrderListScreen';
 
 
 const App = () => {
@@ -41,6 +45,10 @@ const App = () => {
                         <Route path="/product/:id" component={ProductScreen} />
                         <Route path="/cart/:id?" component={CartScreen} />
                         <Route path="/order/:id?" component={OrderScreen} />
+                        <Route path="/admin/userlist" component={UserListScreen} />
+                        <Route path="/admin/productlist" component={ProductListScreen} />
+                        <Route path="/admin/orderlist" component={OrderListScreen} />
+                        <Route path="/admin/product/:id/edit" component={ProductEditScreen} />
                         <Route path="/" exact component={Home} />
 
                     </Switch>
