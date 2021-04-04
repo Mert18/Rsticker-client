@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../actions/userActions.js';
+import AdminDropdown from './AdminDropdown.js';
 
 const Navbar = () => {
     const dispatch = useDispatch();
@@ -13,6 +14,12 @@ const Navbar = () => {
     }
 
     const [open, setOpen] = useState(false);
+    const [adminDropdown, setAdminDropdown] = useState(false);
+
+    const handleAdminDropdown = () => {
+
+        setAdminDropdown(!adminDropdown)
+    }
     return (
         <header className="navbar">
             <div className="navbar__logo">
@@ -86,9 +93,20 @@ const Navbar = () => {
                         <div className="navbar__nav__right">
                             <ul>
                                 {userInfo.isAdmin && (
-                                    <NavLink to="/admin/userlist">
-                                        Admin Paneli
-                                    </NavLink>
+                                    <div className="admin__nav">
+                                        <div className="admin__nav__title" onClick={() => { handleAdminDropdown() }}>
+                                            <h2>Admin Paneli</h2>
+                                        </div>
+                                        <div>
+                                            {adminDropdown && (
+                                                <div className="admin__nav__items">
+                                                    <NavLink to={`/admin/orderlist`}>Siparişler</NavLink>
+                                                    <NavLink to={`/admin/productlist`}>Ürünler</NavLink>
+                                                    <NavLink to={`/admin/userlist`}>Kullanıcılar</NavLink>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
                                 )
                                 }
                                 <NavLink to="/profile">{userInfo.name}</NavLink>

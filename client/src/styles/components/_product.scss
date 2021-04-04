@@ -72,6 +72,104 @@
             }
         }
     }
+}
+
+.productlistscreen {
+    &__title {
+        font-size: 2rem;
+        padding: 2rem;
+    }
+    &__add {
+        padding: 1rem;
+        margin-left: 5rem;
+        button {
+            background-color: $color-1;
+            color: $color-2;
+            padding: 1rem;
+            border: none;
+        }
+    }
+
+    &__table {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: .9rem;
+        text-align: center;
+        a {
+            color: $color-1;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            &:hover {
+                color: blue;
+            }
+        }
+        button {
+            color: $color-1;
+            text-decoration: none;
+            display: flex;
+            background: transparent;
+            border: none;
+            text-align: center;
+            justify-content: center;
+            &:hover {
+                cursor: pointer;
+                color: red;
+            }
+        }
+    }
+}
 
 
+.producteditscreen {
+
+    &__back {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+    &__title {
+        padding: 2rem;
+        font-size: 2.2rem;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__element {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            input {
+                height: 3rem;
+                width: 22rem;
+                text-align: center;
+                font-size: 1rem;
+                border: none;
+                background-color: $color-white-1;
+            }
+            label {
+                position: absolute;
+                top: -20px;
+                left: 0px;
+                font-size: 1rem;
+            }
+
+            
+        }
+        button {
+            color: $color-2;
+            background-color: $color-1;
+            padding: 1rem 2rem;
+            border: none;
+            &:hover {
+                cursor: pointer;
+            }
+            margin-bottom: 3rem;
+        }
+    }
 }

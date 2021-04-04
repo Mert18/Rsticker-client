@@ -15,6 +15,10 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+
+        &__right {
+            display: flex;
+        }
     }
     a {
         color: $color-2;
@@ -85,5 +89,25 @@
         &:last-child {
             border-right: 0px;
         }
+    }
+}
+
+.admin__nav {
+    color: $color-2;
+
+    &__title {
+        h2 {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+.admin__dropdown {
+
+    a {
+        color: $color-2;
+        background-color: $color-1;
+        padding: 1rem;
     }
 }

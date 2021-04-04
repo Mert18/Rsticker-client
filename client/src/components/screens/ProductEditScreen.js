@@ -9,13 +9,13 @@ const ProductEditScreen = ({ match, history }) => {
     const productId = match.params.id
 
     const [name, setName] = useState('');
-    const [price, setPrice] = useState('');
+    const [price, setPrice] = useState(0);
     const [image, setImage] = useState('');
     const [brand, setBrand] = useState('');
     const [category, setCategory] = useState('');
     const [countInStock, setCountInStock] = useState(0);
     const [description, setDescription] = useState('');
-    const [uploading, setUploading] = useState(false);
+    /* const [uploading, setUploading] = useState(false); */
 
     const dispatch = useDispatch();
 
@@ -62,80 +62,80 @@ const ProductEditScreen = ({ match, history }) => {
 
     }
 
-    const uploadFileHandler = async (e) => {
-        const file = e.target.files[0];
-        const formData = new FormData();
-        formData.append('image', file);
-        setUploading(true);
-        try {
-            const config = {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
+    /*     const uploadFileHandler = async (e) => {
+            const file = e.target.files[0];
+            const formData = new FormData();
+            formData.append('image', file);
+            setUploading(true);
+            try {
+                const config = {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
                 }
+                const { data } = await axios.post('/api/upload', formData, config);
+    
+                setImage(data);
+                setUploading(false);
+            } catch (error) {
+                console.error(error)
+                setUploading(false)
             }
-            const { data } = await axios.post('/api/upload', formData, config);
+        } */
 
-            setImage(data);
-            setUploading(false);
-        } catch (error) {
-            console.error(error)
-            setUploading(false)
-        }
-
-    }
     return (
-        <div>
-            <div>
-                <NavLink to='/admin/productList'>Ürün Listesi</NavLink>
+        <div className="producteditscreen">
+            <div className="producteditscreen__back">
+                <NavLink to='/admin/productlist'>Ürün Listesi</NavLink>
             </div>
-            <div>
-                <div>
-                    <h2>Ürün Düzenle</h2>
+
+            <div className="producteditscreen__title">
+                <h2>Ürün Düzenle</h2>
+            </div>
+
+            <form onSubmit={submitHandler} className="producteditscreen__form">
+                <div className="producteditscreen__form__element">
+                    <label htmlFor="name">Ürün İsmi</label>
+                    <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
                 </div>
-                <div>
-                    <form onSubmit={submitHandler}>
-                        <div>
-                            <label htmlFor="name">Ürün İsmi</label>
-                            <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
-                        </div>
-                        <div>
-                            <label htmlFor="price">Ürün Fiyatı</label>
-                            <input id="price" type="number" value={price} onChange={(e) => setPrice(e.target.value)} />
-                        </div>
+                <div className="producteditscreen__form__element">
+                    <label htmlFor="price">Ürün Fiyatı</label>
+                    <input id="price" type="number" value={price} onChange={(e) => setPrice(e.target.value)} />
+                </div>
 
-                        <div>
-                            <label htmlFor="image">Resim</label>
-                            <input id="image" type="text" value={image} onChange={(e) => setImage(e.target.value)} />
-                        </div>
-                        <div>
-                            <label htmlFor="brand">Marka</label>
-                            <input id="brand" type="text" value={brand} onChange={(e) => setBrand(e.target.value)} />
-                        </div>
+                <div className="producteditscreen__form__element">
+                    <label htmlFor="image">Resim</label>
+                    <input id="image" type="text" value={image} onChange={(e) => setImage(e.target.value)} />
+                </div>
+                <div className="producteditscreen__form__element">
+                    <label htmlFor="brand">Marka</label>
+                    <input id="brand" type="text" value={brand} onChange={(e) => setBrand(e.target.value)} />
+                </div>
 
-                        <div>
-                            <label htmlFor="countInStock">Stok</label>
-                            <input id="countInStock" value={countInStock} type="number" onChange={(e) => setCountInStock(e.target.value)} />
-                        </div>
+                <div className="producteditscreen__form__element">
+                    <label htmlFor="countInStock">Stok</label>
+                    <input id="countInStock" value={countInStock} type="number" onChange={(e) => setCountInStock(e.target.value)} />
+                </div>
 
-                        <div>
-                            <label htmlFor="category">Kategori</label>
-                            <input id="category" type="text" value={category} onChange={(e) => setCategory(e.target.value)} />
-                        </div>
+                <div className="producteditscreen__form__element">
+                    <label htmlFor="category">Kategori</label>
+                    <input id="category" type="text" value={category} onChange={(e) => setCategory(e.target.value)} />
+                </div>
 
-                        <div>
-                            <label htmlFor="description">Açıklama</label>
-                            <input id="description" value={description} type="text" onChange={(e) => setDescription(e.target.value)} />
-                        </div>
-
+                <div className="producteditscreen__form__element">
+                    <label htmlFor="description">Açıklama</label>
+                    <input id="description" value={description} type="text" onChange={(e) => setDescription(e.target.value)} />
+                </div>
+                {/* 
                         <div>
                             <label htmlFor="uploading">Ürün Resmi</label>
-                            <input id="uploading" type="file" value={uploading} onChange={() => { uploadFileHandler() }} />
-                        </div>
-                    </form>
-                </div>
-            </div>
+                            <input id="uploading" type="file" onChange={() => { uploadFileHandler() }} />
+                        </div> */}
 
+                <button type="submit" onClick={() => { submitHandler() }}>Onayla</button>
+            </form>
         </div>
+
     )
 }
 

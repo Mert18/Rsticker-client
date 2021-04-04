@@ -46,48 +46,47 @@ const ProductListScreen = ({ match, history }) => {
 
 
     return (
-        <div>
-            <h1>Ürünler</h1>
-            <div>
+        <div className="productlistscreen">
+            <div className="productlistscreen__title">
+                <h1>Ürünler</h1>
+            </div>
+            <div className="productlistscreen__add">
                 <button onClick={() => createProductHandler()}>
                     Ürün Ekle
                 </button>
             </div>
-            <div>
 
-                <div>
-                    <div>
-                        <p>ID</p>
-                        <p>Ürün İsmi</p>
-                        <p>Fiyat</p>
-                        <p>Marka</p>
-                        <p>Kategori</p>
-                        <p>Açıklama</p>
-                    </div>
-                    <div>
-                        {products.map((product) => (
-                            <li key={product._id}>
-                                {/* table things here */}
-                                <div>
-                                    <p>{product._id}</p>
-                                    <p>{product.name}</p>
-                                    <p>{product.price}</p>
-                                    <p>{product.brand}</p>
-                                    <p>{product.category}</p>
-                                    <p>{product.description}</p>
-                                </div>
+            <div className="productlistscreen__table">
+                <table border="1" width="80%">
+                    <tr>
+                        <th>ID</th>
+                        <th>Ürün İsmi</th>
+                        <th>Fiyat</th>
+                        <th>Marka</th>
+                        <th>Kategori</th>
+                        <th>Açıklama</th>
+                    </tr>
+                    {products.map((product) => (
+                        <tr key={product._id}>
+                            {/* table things here */}
+                            <td>{product._id}</td>
+                            <td>{product.name}</td>
+                            <td>{product.price}</td>
+                            <td>{product.brand}</td>
+                            <td>{product.category}</td>
+                            <td>{product.description}</td>
 
-                                <div>
-                                    <NavLink to={`/admin/product/${product._id}/edit`}>Düzenle</NavLink>
-                                </div>
-                                <div>
-                                    <button onClick={() => { deleteHandler(product._id) }}>Sil</button>
-                                </div>
-                            </li>
-                        ))}
-                    </div>
-                </div>
+                            <td>
+                                <NavLink to={`/admin/product/${product._id}/edit`}>Düzenle</NavLink>
+                            </td>
+                            <td>
+                                <button onClick={() => { deleteHandler(product._id) }}>Sil</button>
+                            </td>
+                        </tr>
+                    ))}
+                </table>
             </div>
+
         </div>
     )
 }
