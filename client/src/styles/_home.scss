@@ -16,4 +16,8 @@
         background-repeat: no-repeat;
         color: $color-2;
     }
+
+    &__products {
+        display: flex;
+    }
 }

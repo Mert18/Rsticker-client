@@ -21,10 +21,19 @@ const Home = () => {
             {error && { error }}
             <div className="home__hero">
                 <Hero />
-                {/* 
+            </div>
+            <div className="home__products">
                 {products ? products.map((product) => (
-                    <h2>{product.name}</h2>
-                )) : <h2>Ürün Bulunamadı</h2>} */}
+                    <div className="single__product">
+                        <div className="single__product__image">
+                            <img src={product.image} alt={product.description} width="350px" />
+                        </div>
+                        <div className="single__product__text">
+                            <h2>{product.name}</h2>
+                            <h2>{product.price}₺</h2>
+                        </div>
+                    </div>
+                )) : <h2>Ürün Bulunamadı</h2>}
             </div>
         </div>
     )

@@ -93,36 +93,36 @@ const ProductEditScreen = ({ match, history }) => {
                 <h2>Ürün Düzenle</h2>
             </div>
 
-            <form onSubmit={submitHandler} className="producteditscreen__form">
-                <div className="producteditscreen__form__element">
+            <form onSubmit={submitHandler} className="form__form">
+                <div className="form__form__element">
                     <label htmlFor="name">Ürün İsmi</label>
                     <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
                 </div>
-                <div className="producteditscreen__form__element">
+                <div className="form__form__element">
                     <label htmlFor="price">Ürün Fiyatı</label>
                     <input id="price" type="number" value={price} onChange={(e) => setPrice(e.target.value)} />
                 </div>
 
-                <div className="producteditscreen__form__element">
+                <div className="form__form__element">
                     <label htmlFor="image">Resim</label>
                     <input id="image" type="text" value={image} onChange={(e) => setImage(e.target.value)} />
                 </div>
-                <div className="producteditscreen__form__element">
+                <div className="form__form__element">
                     <label htmlFor="brand">Marka</label>
                     <input id="brand" type="text" value={brand} onChange={(e) => setBrand(e.target.value)} />
                 </div>
 
-                <div className="producteditscreen__form__element">
+                <div className="form__form__element">
                     <label htmlFor="countInStock">Stok</label>
                     <input id="countInStock" value={countInStock} type="number" onChange={(e) => setCountInStock(e.target.value)} />
                 </div>
 
-                <div className="producteditscreen__form__element">
+                <div className="form__form__element">
                     <label htmlFor="category">Kategori</label>
                     <input id="category" type="text" value={category} onChange={(e) => setCategory(e.target.value)} />
                 </div>
 
-                <div className="producteditscreen__form__element">
+                <div className="form__form__element">
                     <label htmlFor="description">Açıklama</label>
                     <input id="description" value={description} type="text" onChange={(e) => setDescription(e.target.value)} />
                 </div>

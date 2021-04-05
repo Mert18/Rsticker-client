@@ -21,28 +21,27 @@ const UserListScreen = ({ history }) => {
         }
     }, [dispatch, history, userInfo])
     return (
-        <div>
-            <h1>Kullanıcılar</h1>
-            <div>
+        <div className="userlist">
+            <div className="userlist__title">
+                <h1>Kullanıcılar</h1>
+            </div>
 
-                <div>
-                    <div>
-                        <p>ID</p>
-                        <p>Ad</p>
-                        <p>Email</p>
-                        <p>X</p>
-                    </div>
-                    <div>
-                        {users.map((user) => (
-                            <div key={user._id}>
-                                {/* table things here */}
-                                <p>{user._id}</p>
-                                <p>{user.name}</p>
-                                <p>{user.email}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+            <div className="userlist__table">
+                <table border="1" width="80%">
+                    <tr>
+                        <th>ID</th>
+                        <th>Ad</th>
+                        <th>Email</th>
+                    </tr>
+                    {users.map((user) => (
+                        <tr key={user._id}>
+                            {/* table things here */}
+                            <td>{user._id}</td>
+                            <td>{user.name}</td>
+                            <td>{user.email}</td>
+                        </tr>
+                    ))}
+                </table>
             </div>
         </div>
     )

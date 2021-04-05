@@ -31,9 +31,9 @@ const SignUp = ({ location, history }) => {
     }
 
     return (
-        <div className="signup">
+        <div className="form">
 
-            <div className="signup__title">
+            <div className="form__title">
                 <h2>Kayıt Ol</h2>
             </div>
             {message && { message }}
@@ -41,23 +41,23 @@ const SignUp = ({ location, history }) => {
             {loading && { loading }}
 
 
-            <form className="signup__form" autoComplete="off" onSubmit={submitHandler}>
-                <div className="signup__form__element">
+            <form className="form__form" autoComplete="off" onSubmit={submitHandler}>
+                <div className="form__form__element">
                     <label htmlFor="name">Name</label>
                     <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
                 </div>
 
-                <div className="signup__form__element">
+                <div className="form__form__element">
                     <label htmlFor="email">E-mail</label>
                     <input type="text" id="email" value={email} onChange={(e) => { setEmail(e.target.value) }} />
                 </div>
 
-                <div className="signup__form__element">
+                <div className="form__form__element">
                     <label htmlFor="password">Parola</label>
                     <input type="password" id="password" value={password} onChange={(e) => { setPassword(e.target.value) }} />
                 </div>
 
-                <div className="signup__form__element">
+                <div className="form__form__element">
                     <label htmlFor="conpassword">Yeniden Parola</label>
                     <input type="password" id="conpassword" value={confirmPassword} onChange={(e) => { setConfirmPassword(e.target.value) }} />
                 </div>

@@ -25,20 +25,20 @@ const SignIn = ({ location, history }) => {
         dispatch(login(email, password))
     }
     return (
-        <div className="signin">
+        <div className="form">
 
-            <div className="signin__title">
+            <div className="form__title">
                 <h2>Giriş Yap</h2>
             </div>
 
             {error && <h1>{error}</h1>}
             {loading && <h1>{loading}</h1>}
-            <form className="signin__form" autoComplete="off" onSubmit={submitHandler}>
-                <div className="signin__form__element">
+            <form className="form__form" autoComplete="off" onSubmit={submitHandler}>
+                <div className="form__form__element">
                     <label htmlFor="email" >E-mail</label>
                     <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
-                <div className="signin__form__element">
+                <div className="form__form__element">
                     <label htmlFor="password" >Parola</label>
                     <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
