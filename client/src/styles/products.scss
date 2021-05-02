@@ -1,0 +1,98 @@
+
+.home {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    &__products {
+        grid-column: 1 /12;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 3rem;
+    }
+}
+.product {
+    background-color: white;
+    margin: 2rem;
+    border-radius: 3rem;
+    text-align: center;
+    font-size: 1.1rem;
+    width: 25%;
+    border: 2px solid black;
+    &__image {
+        padding: 2rem;
+    }
+    &__button {
+        padding: 1rem;
+        button {
+            background: transparent;
+            transition: all .2s;
+
+            padding: .5rem;
+            &:hover {
+                transition: all .2s;
+                cursor: pointer;
+                background-color: $back;
+            }
+        }
+        
+    }
+}
+
+.productsc {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    &__head {
+        grid-column: 2 / 11;
+        font-size: 1.2rem;
+        &__goback {
+            padding: 1rem;
+            i {
+                margin: .3rem;
+            }
+        }
+    }
+    &__main {
+        grid-column: 2 / 11;
+        
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+
+        &__desc {
+            grid-column: 2 / 7;
+            font-size: 1.2rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            * {
+                margin: .5rem;
+            }
+            button {
+                background: transparent;
+                padding: .5rem;
+                transition: all .2s;
+
+                &:hover {
+                    transition: all .2s;
+                    background-color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+        &__image {
+            grid-column: 7 / 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__foot {
+        grid-column: 1 / -1;
+        background-color: white;
+        padding: 2rem;
+        font-size: 1rem;
+    }
+}

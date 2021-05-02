@@ -1,68 +1,42 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import Rating from '../Rating';
-import { listProductDetails } from '../../actions/productActions.js'
+import React from 'react';
+import Layout from '../../core/Layout';
+import {Link} from 'react-router-dom';
 
-const ProductScreen = ({ history, match }) => {
-    const [qty, setQty] = useState(1)
-    const dispatch = useDispatch();
+import products from '../../products';
 
-    const productDetails = useSelector(state => state.productDetails);
-    // eslint-disable-next-line no-unused-vars
-    const { loading, error, product } = productDetails
-    useEffect(() => {
-
-        dispatch(listProductDetails(match.params.id))
-    }, [dispatch, match]);
-
-    const addToCartHandler = () => {
-        history.push(`/cart/${match.params.id}?qty=${qty}`)
-    }
+const ProductScreen = ({match}) => {
+    const product = products.find(p => p._id === match.params.id);
 
     return (
-        <div className="singleproduct">
-            {error && { error }}
-            <div className="singleproduct__back">
-                <Link to="/">Geri Dön</Link>
-            </div>
-
-            <div className="singleproduct__image">
-                <img src={product.image} alt={product.name} width="350px" />
-            </div>
-
-            <div className="singleproduct__text">
-                <div className="singleproduct__text__name">
-                    <h2>{product.name}</h2>
-                </div>
-                <div className="singleproduct__text__rating">
-                    <Rating value={product.rating} text={`${product.numReviews} Reviews`} />
-                </div>
-                <div className="singleproduct__text__sub">
-                    <h2>2 TL / ADET</h2>
-                    <h2>Category: {product.category}</h2>
-                    <h2>Stok Adedi: {product.countInStock}</h2>
-                </div>
-
-                {product.countInStock > 0 && (
-                    <div className="singleproduct__text__stock">
-                        <h3>Adet</h3>
-                        <select type="select" value={qty} onChange={(e) => setQty(e.target.value)}>
-                            {
-                                [...Array(product.countInStock).keys()].map((x) => (
-                                    <option key={x + 1} value={x + 1}>
-                                        {x + 1}
-                                    </option>
-                                ))}
-                        </select>
-
+        <Layout>
+            <div className="productsc">
+                <div className="productsc__head">
+                    <div className="productsc__head__goback">
+                        <Link to="/"><i class="fas fa-arrow-left"></i>Go Back</Link>
                     </div>
-                )}
-                <div className="singleproduct__text__btn">
-                    <button onClick={addToCartHandler}>Add to cart</button>
                 </div>
-            </div>
-        </div>
+                <div className="productsc__main">
+                    <div className="productsc__main__desc">
+                        <h2>{product.name}</h2>
+                        <p>{product.description}</p>
+                        <p>{product.dimensions}</p>
+                        <button>ADD TO CART</button>
+                    </div>
+                    <div className="productsc__main__image">
+                        <img src={product.image} alt={product.description} width="350px" />
+                    </div>
+                </div>
+                <div className="productsc__foot">
+                    <div className="productsc__foot__title">
+                        <h3>Every sticker have the following properties.</h3>
+                        <ul>
+                            <li>Every sticker's price is $0.50.</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>        
+        </Layout>
     )
 }
 

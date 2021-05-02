@@ -1,25 +1,20 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
-import Rating from './Rating';
-
-import { NavLink } from "react-router-dom";
-
-
-const Product = ({ product }) => {
-
+const Product = ({product}) => {
     return (
         <div className="product">
-            <NavLink to={`/product/${product._id}`}>
-                <img src={product.image} alt={product.name} width="250px" />
-            </NavLink>
-
-            <NavLink to={`/product/${product._id}`}>
-                <h3><strong>{product.name}</strong></h3>
-
-                <div>
-                    <Rating value={product.rating} text={`${product.numReviews} değerlendirme`} />
+            <Link to={`/product/${product._id}`}>
+                <div className="product__image">
+                    <img src={product.image} alt={product.description} width="200px" />
                 </div>
-            </NavLink>
+                <div className="product__name">
+                    <p>{product.name}</p>
+                </div>
+                <div className="product__button">
+                    <button>ADD TO CART</button>
+                </div>
+            </Link>
         </div>
     )
 }
