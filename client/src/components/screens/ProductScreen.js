@@ -1,31 +1,48 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Layout from '../../core/Layout';
 import {Link} from 'react-router-dom';
 
-import products from '../../products';
+import {useDispatch, useSelector} from 'react-redux';
+import {listProductDetails} from '../../actions/productActions.js';
 
 const ProductScreen = ({match}) => {
-    const product = products.find(p => p._id === match.params.id);
+    const dispatch = useDispatch();
+
+    const productDetails = useSelector(state => state.productDetails);
+    const {loading, error, product} = productDetails;
+
+    useEffect(() => {
+        dispatch(listProductDetails(match.params.id))
+    }, [match, dispatch]);
+
 
     return (
         <Layout>
             <div className="productsc">
                 <div className="productsc__head">
                     <div className="productsc__head__goback">
-                        <Link to="/"><i class="fas fa-arrow-left"></i>Go Back</Link>
+                        <Link to="/"><i className="fas fa-arrow-left"></i>Go Back</Link>
                     </div>
                 </div>
-                <div className="productsc__main">
-                    <div className="productsc__main__desc">
-                        <h2>{product.name}</h2>
-                        <p>{product.description}</p>
-                        <p>{product.dimensions}</p>
-                        <button>ADD TO CART</button>
+
+                {loading ? 
+                <p>Loading
+                </p> :
+                error ? 
+                <p>{error}</p> : (
+                    <div className="productsc__main">
+                        <div className="productsc__main__desc">
+                            <h2>{product.name}</h2>
+                            <p>{product.description}</p>
+                            <p>{product.dimensions}</p>
+                            <button>ADD TO CART</button>
+                        </div>
+                        <div className="productsc__main__image">
+                            <img src={product.image} alt={product.description} width="350px" />
+                        </div>
                     </div>
-                    <div className="productsc__main__image">
-                        <img src={product.image} alt={product.description} width="350px" />
-                    </div>
-                </div>
+                )}
+                
                 <div className="productsc__foot">
                     <div className="productsc__foot__title">
                         <h3>Every sticker have the following properties.</h3>

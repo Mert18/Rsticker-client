@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 
 import {Link, withRouter} from 'react-router-dom';
 
@@ -19,7 +19,7 @@ const Navbar = ({match}) => {
                 <Link to="/" style={isActive('/')}>Home</Link>
             </div>
             <div className="nav__right">
-                <Link to="/signup" style={isActive('/signup')}><i class="fas fa-user-plus"></i>Login or Signup</Link>
+                <Link to="/signup" style={isActive('/signup')}><i className="fas fa-user-plus"></i>Login or Signup</Link>
             </div>
             
         </header>
