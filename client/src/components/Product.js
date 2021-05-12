@@ -11,9 +11,6 @@ const Product = ({product}) => {
                 <div className="product__name">
                     <p>{product.name}</p>
                 </div>
-                <div className="product__button">
-                    <button>ADD TO CART</button>
-                </div>
             </Link>
         </div>
     )

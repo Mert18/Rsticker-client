@@ -1,5 +1,9 @@
 
-$back : #EDF4ED;
+$back : #FBFBFF;
+
+$flavor : #6F1A07;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
 *,
@@ -15,4 +19,5 @@ $back : #EDF4ED;
 body {
     font-size: 62.5%;
     background-color: $back;
+    font-family: 'Poppins', sans-serif;
 }

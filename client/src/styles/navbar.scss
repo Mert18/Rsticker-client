@@ -3,12 +3,11 @@
     font-size: 1rem;
     display: grid;
     grid-template-columns: repeat(12 , 1fr);
-    background-color: white;
+    background-color: $flavor;
 
     &__left {
         grid-column: 3 / 8;
         padding: 1.3rem;
-
     }
     &__right {
         grid-column: 9 / -1;

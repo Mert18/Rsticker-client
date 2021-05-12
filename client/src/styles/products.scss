@@ -11,30 +11,19 @@
     }
 }
 .product {
-    background-color: white;
     margin: 2rem;
     border-radius: 3rem;
     text-align: center;
     font-size: 1.1rem;
     width: 25%;
-    border: 2px solid black;
     &__image {
         padding: 2rem;
-    }
-    &__button {
-        padding: 1rem;
-        button {
-            background: transparent;
-            transition: all .2s;
-
-            padding: .5rem;
-            &:hover {
-                transition: all .2s;
-                cursor: pointer;
-                background-color: $back;
-            }
+        display: flex;
+        justify-content: center;
+        img {
+            display: block;
+            max-width: 100%;
         }
-        
     }
 }
 
@@ -76,7 +65,6 @@
 
                 &:hover {
                     transition: all .2s;
-                    background-color: white;
                     cursor: pointer;
                 }
             }
@@ -91,7 +79,6 @@
 
     &__foot {
         grid-column: 1 / -1;
-        background-color: white;
         padding: 2rem;
         font-size: 1rem;
     }

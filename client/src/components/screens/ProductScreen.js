@@ -1,11 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Layout from '../../core/Layout';
 import {Link} from 'react-router-dom';
 
 import {useDispatch, useSelector} from 'react-redux';
 import {listProductDetails} from '../../actions/productActions.js';
 
-const ProductScreen = ({match}) => {
+const ProductScreen = ({match, history}) => {
+    const [qty, setQty] = useState(1);
     const dispatch = useDispatch();
 
     const productDetails = useSelector(state => state.productDetails);
@@ -15,6 +16,12 @@ const ProductScreen = ({match}) => {
         dispatch(listProductDetails(match.params.id))
     }, [match, dispatch]);
 
+    const addToCartHandler = () => {
+        history.push(`/cart/${match.params.id}?qty=${qty}`)
+    }
+    const handleQty = (e) => {
+        setQty(e.target.value);
+    }
 
     return (
         <Layout>
@@ -35,7 +42,14 @@ const ProductScreen = ({match}) => {
                             <h2>{product.name}</h2>
                             <p>{product.description}</p>
                             <p>{product.dimensions}</p>
-                            <button>ADD TO CART</button>
+                            <select onChange={handleQty}>
+                                <option default>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                            <button onClick={addToCartHandler}>ADD TO CART</button>
                         </div>
                         <div className="productsc__main__image">
                             <img src={product.image} alt={product.description} width="350px" />
