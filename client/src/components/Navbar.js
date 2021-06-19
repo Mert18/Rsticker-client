@@ -31,20 +31,17 @@ const Navbar = ({match}) => {
             </div>
             <div className="nav__right">
                 {userInfo ? (
-                    <div>
+                    <div className="nav__right__links">
                         <Link to="/profile" style={isActive('/cart')}>Profile</Link>
-                        <Link to="/cart" style={isActive('/cart')}><i class="fas fa-shopping-cart"></i>Cart</Link>
-                        <h2 onClick={logoutHandler}>Logout</h2>
+                        <Link to="/cart" style={isActive('/cart')}><i className="fas fa-shopping-cart"></i>Cart</Link>
+                        <button onClick={logoutHandler}>Logout</button>
                     </div>
                     
                 ) :
                 (
-                    <div>
+                    <div className="nav__right__links">
                         <Link to="/login" style={isActive('/login')}><i className="fas fa-user-plus"></i>Log In</Link>
                         <Link to="/register" style={isActive('/register')}><i className="fas fa-user-plus"></i>Register</Link>
-
-                        
-
                     </div>
                     
                 )}

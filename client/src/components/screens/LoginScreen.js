@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {login} from '../../actions/userActions.js';
+import Layout from '../../core/Layout.js';
 
 const LoginScreen = ({location, history}) => {
     const [email, setEmail] = useState('mertuygur02@gmail.com');
@@ -26,45 +27,34 @@ const LoginScreen = ({location, history}) => {
 
     }
     return (
+        <Layout>
         <div className="login">
-
-            <div className="login__left">
-                <div className="login__left__messages">
-                    {error && <h2>{error}</h2>}
-                    {loading && <h2>Loading...</h2>}
-                    <div className="back">
-                        <Link to="/"><i class="fas fa-chevron-left"></i>Geri Dön</Link>
-                    </div>
-                    
-                </div>
-                <div className="login__left__formcontainer">
-                    <form onSubmit={submitHandler} className="form">
-                        <div className="form__inputbox">
-                            <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-                            <label htmlFor="email">Email</label>
-                        </div>
-
-                        <div className="form__inputbox">
-                            <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
-                            <label htmlFor="password">Password</label>
-                        </div>
-
-                        <div className="form__buttonbox">
-                            <button type="submit">Log In</button>
-                        </div>
-                    </form>
-                </div>
-
-                <div className="login__left__redirect">
-                    <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>Register Instead</Link>
-                </div>
+            <div className="login__messages">
+                {error && <h2>{error}</h2>}
+                {loading && <h2>Loading...</h2>}
             </div>
-
-            <div className="login__right">
-                <img src="/images/red_half.svg" alt="scene red" />
+            <div className="login__formcontainer">
+                <form onSubmit={submitHandler} className="form">
+                    <div className="form__inputbox">
+                        <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                        <label htmlFor="email">Email</label>
+                    </div>
+                    <div className="form__inputbox">
+                        <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                        <label htmlFor="password">Password</label>
+                    </div>
+                    <div className="form__buttonbox">
+                        <button type="submit">Log In</button>
+                    </div>
+                </form>
+            </div>
+            <div className="login__left__redirect">
+                <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>Register Instead</Link>
             </div>
         </div>
+        </Layout>
     )
 }
 
 export default LoginScreen
+

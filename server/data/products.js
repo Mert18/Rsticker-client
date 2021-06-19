@@ -1,7 +1,7 @@
 const products = [
     {
         name: 'Super mario sad',
-        image: '/images/sad.png',
+        image: '/images/stickers/sad.png',
         description: 'Super mario sad sticker',
         category: 'Game',
         price: .50,
@@ -9,7 +9,7 @@ const products = [
     },
     {
         name: 'Super mario sad',
-        image: '/images/main.png',
+        image: '/images/stickers/main.png',
         description: 'Super mario sad sticker',
         category: 'Game',
         price: .50,
@@ -18,7 +18,7 @@ const products = [
     },
     {
         name: 'Super mario sad',
-        image: '/images/supermariostory.png',
+        image: '/images/stickers/supermariostory.png',
         description: 'Super mario sad sticker',
         category: 'Game',
         price: .50,

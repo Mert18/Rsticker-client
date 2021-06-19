@@ -1,0 +1,59 @@
+
+
+.profile {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+
+    &__buttonbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: .6rem;
+    }
+
+    &__message {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 3rem;
+    }
+}
+.profile__form__title {
+    text-align: center;
+    font-size: 1.1rem;
+}
+.profile__form__container {
+    padding: 1.2rem;
+    grid-column: 3 / 11;
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        .profile__inputbox {
+            display: flex;
+            flex-direction: column;
+            padding: .4rem;
+            label {
+                font-size: 1rem;
+                color: $flavor;
+            }
+
+            input {
+                font-size: 1.1rem;
+                padding: .4rem;
+            }
+        }
+
+        button {
+            background-color: $flavor;
+            color: $back;
+            font-size: 1.2rem;
+            padding: .5rem;
+            outline: none;
+            &:hover {
+                background-color: rgb(58, 6, 6);
+                cursor: pointer;
+            }
+        }
+    }
+}

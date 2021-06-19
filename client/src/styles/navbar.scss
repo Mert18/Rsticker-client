@@ -1,16 +1,44 @@
 
-.nav {
-    font-size: 1rem;
-    display: grid;
-    grid-template-columns: repeat(12 , 1fr);
-    background-color: $flavor;
 
+
+.nav {
+    background-color: $flavor;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    font-size: 1rem;
     &__left {
-        grid-column: 3 / 8;
-        padding: 1.3rem;
+        grid-column: 2 / 11;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            padding: 1.2rem;
+        }
     }
+
     &__right {
-        grid-column: 9 / -1;
-        padding: 1.3rem;
+        grid-column: 18 / -1;
+
+        &__links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                padding: 1.2rem;
+            }
+
+            button {
+                background: transparent;
+                color: white;
+                border: none;
+                outline: none;
+
+                &:hover {
+                    cursor: pointer;
+                    color: red;
+                }
+            }
+        }
     }
 }

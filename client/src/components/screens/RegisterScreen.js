@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {register} from '../../actions/userActions.js';
+import Layout from '../../core/Layout.js';
 
 const RegisterScreen = ({location, history}) => {
     const [name, setName] = useState('');
@@ -34,16 +35,12 @@ const RegisterScreen = ({location, history}) => {
 
     }
     return (
+        <Layout>
         <div className="login">
-
             <div className="login__left">
                 <div className="login__left__messages">
                     {error && <h2>{error}</h2>}
                     {loading && <h2>Loading...</h2>}
-                    <div className="back">
-                        <Link to="/"><i class="fas fa-chevron-left"></i>Geri Dön</Link>
-                    </div>
-                    
                     {message}
                 </div>
                 <div className="login__left__formcontainer">
@@ -77,11 +74,8 @@ const RegisterScreen = ({location, history}) => {
                     <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>Log In Instead</Link>
                 </div>
             </div>
-
-            <div className="login__right">
-
-            </div>
         </div>
+        </Layout>
     )
 }
 
