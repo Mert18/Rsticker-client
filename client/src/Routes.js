@@ -9,6 +9,8 @@ import RegisterScreen from './components/screens/RegisterScreen';
 import ProfileScreen from './components/screens/ProfileScreen';
 import ShippingScreen from './components/screens/ShippingScreen';
 
+import PlaceOrderScreen from './components/screens/PlaceOrderScreen';
+
 const Routes = () => {
     return(
         <BrowserRouter>
@@ -20,6 +22,7 @@ const Routes = () => {
                 <Route path='/product/:id' component={ProductScreen} />
                 <Route path='/cart/:id?' component={CartScreen} />
                 <Route path='/shipping' component={ShippingScreen} />
+                <Route path='/placeorder' component={PlaceOrderScreen} />
             </Switch>
         </BrowserRouter>
     )

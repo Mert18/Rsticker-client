@@ -21,3 +21,12 @@ body {
     background-color: $back;
     font-family: 'Poppins', sans-serif;
 }
+
+.active{
+    color: green;
+}
+
+.disabled{
+    pointer-events: none;
+    color: red;
+}
