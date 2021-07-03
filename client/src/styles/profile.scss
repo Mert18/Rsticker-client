@@ -35,7 +35,6 @@
             padding: .4rem;
             label {
                 font-size: 1rem;
-                color: $flavor;
             }
 
             input {
@@ -45,8 +44,6 @@
         }
 
         button {
-            background-color: $flavor;
-            color: $back;
             font-size: 1.2rem;
             padding: .5rem;
             outline: none;

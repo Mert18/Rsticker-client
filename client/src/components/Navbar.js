@@ -8,12 +8,12 @@ import { logout } from '../actions/userActions';
 
 const Navbar = ({match}) => {
     const dispatch = useDispatch();
-
     const isActive = path => {
+        console.log(path)
         if(match.path === path){
-            return {color: '#FFFFFF'}
+            return {textDecoration: `yellow underline`, textDecorationThickness:'6px'}
         } else {
-            return {color: '#DE6C83'}
+            return {color: 'black'}
         }
     }
 
@@ -27,27 +27,28 @@ const Navbar = ({match}) => {
     return (
         <header className="nav">
             <div className="nav__left">
-                <Link to="/" style={isActive('/')}>Home</Link>
+                <div className="nav__left__back"></div>
+                <div className="nav__left__front"><Link to="/">commerce.com</Link></div>
             </div>
-            <div className="nav__right">
-                {userInfo ? (
-                    <div className="nav__right__links">
-                        <Link to="/profile" style={isActive('/cart')}>Profile</Link>
-                        <Link to="/cart" style={isActive('/cart')}><i className="fas fa-shopping-cart"></i>Cart</Link>
+            <div className="nav__middle">
+                <Link to="/" style={isActive('/')}>Home</Link>
+                <Link to="/custom" style={isActive('/custom')}>Custom</Link>
+            </div>
+            {userInfo ? (
+                    <div className="nav__right">
+                        <Link to="/profile" style={isActive('/profile')}>Profile</Link>
+                        <Link to="/cart" style={isActive('/cart')}>Cart</Link>
                         <button onClick={logoutHandler}>Logout</button>
                     </div>
                     
                 ) :
                 (
-                    <div className="nav__right__links">
-                        <Link to="/login" style={isActive('/login')}><i className="fas fa-user-plus"></i>Log In</Link>
-                        <Link to="/register" style={isActive('/register')}><i className="fas fa-user-plus"></i>Register</Link>
+                    <div className="nav__right">
+                        <Link to="/login" style={isActive('/login')}>Log In</Link>
+                        <Link to="/register" style={isActive('/register')}>Register</Link>
                     </div>
                     
                 )}
-                
-            </div>
-            
         </header>
     )
 }

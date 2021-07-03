@@ -15,17 +15,29 @@ const HomeScreen = () => {
     
     return(
         <div className="home">
-            {loading ? 
+            {loading ?
             <h2>Loading</h2>
-             : error ? 
+             : /* error ? 
              <h3>{error}</h3>
-              : 
+              :  */
             
-            <div className="home__products">
-                {products.map(product => (
-                    <Product key={product._id} product={product} />
-                ))}
-            </div>}
+            <>
+                <div className='hero'>
+                    <div className='hero__hero'>
+                        <h1>Welcome to commerce.com</h1>
+                    </div>
+                    <div className='hero__text'>
+                        <p>Every sticker costs x.</p>
+                        <p>Ship to x country only.</p>
+                    </div>
+                </div>
+                {/* <div className='products'>
+                    {products.map(product => (
+                        <Product key={product._id} product={product} />
+                    ))}
+                </div> */}
+                
+            </>}
             
             
         </div>
