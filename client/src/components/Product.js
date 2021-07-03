@@ -12,6 +12,10 @@ const Product = ({product}) => {
                 <div className="product__name">
                     <p>{product.name}</p>
                 </div>
+                <div className="product__btn">
+                    <button><i class="fas fa-shopping-cart"></i></button>
+                    <button><i class="fas fa-search"></i></button>
+                </div>
             </Link>
         </div>
     )

@@ -2,8 +2,11 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer>
-            <h1>footer</h1>
+        <footer className="footer">
+            <div className="social">
+                <a href=''>Instagram</a>
+                <a href=''>Twitter</a>
+            </div>
         </footer>
     )
 }

@@ -1,84 +1,59 @@
 
-.login {
+
+.login{
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+
+    &__hero{
+        font-size: 2rem;
+        display: flex;
+        grid-column: 3 / 8;
+    }
+
+    &__formcontainer{
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+}
+
+.form__inputbox{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    &__formcontainer {
-        margin-top: 7rem;
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width:50%;
-        border-radius: 2rem;
-        form{
-            width: 100%;
+    font-size: 1rem;
 
-            input{
-                width: 100%;
-                border: 2px solid rgb(90, 18, 18);
-            }
-        }
-
-        &__redirect {
-            a {
-                font-size: 1rem;
-            }
-        }
-
-    }
-}
-
-.form__inputbox {
-    position: relative;
-    label {
-        position: absolute;
-        top:8px;
-        left: 5px;
-        padding: 10px 0;
-        font-size: 16px;
-        pointer-events: none;
-        transition: .5s;
-    }
-    input {
-        width: 100%;
-        padding: 10px 10px;
-        font-size: 16px;
-        margin-bottom: 30px;
-        border: none;
-        outline: none;
+    input{
+        height: 6vh;
+        width: 20rem;
         text-align: center;
-        height: 8vh;
-        
-        &:focus ~ label{
-            top: -20px;
-            left: 0px;
-            font-size: 12px;
-        }
+        font-size: 1.2rem;
     }
 }
-.form__buttonbox {
-    display: flex;
-    justify-content: center;
-    margin: 1rem;
-    button {
-        width: 30%;
-        height: 5vh;
-        &:hover {
-            background-color: rgb(129, 19, 19);
-            cursor: pointer;
+.form__buttonbox{
+    text-align: center;
+    padding: 2rem;
+    button{
+        padding: .4rem;
+        background: transparent;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(250, 248, 248);
         }
     }
 }
 
-.back {
-    position: absolute;
-    top: 5%;
-    left: 10%;
-    display: flex;
-    a {
-        font-size: 1.2rem;
+.register{
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+
+    &__hero{
+        font-size: 2rem;
+        display: flex;
+        grid-column: 3 / 8;
+    }
+
+    &__formcontainer{
+        grid-column: 1 / -1;
+        justify-self: center;
     }
 }

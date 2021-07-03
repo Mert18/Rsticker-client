@@ -36,45 +36,42 @@ const RegisterScreen = ({location, history}) => {
     }
     return (
         <Layout>
-        <div className="login">
-            <div className="login__left">
-                <div className="login__left__messages">
-                    {error && <h2>{error}</h2>}
-                    {loading && <h2>Loading...</h2>}
-                    {message}
-                </div>
-                <div className="login__left__formcontainer">
-                    <form onSubmit={submitHandler} className="form">
-                    <div className="form__inputbox">
-                            <input id="name" type="name" value={name} onChange={(e) => setName(e.target.value)}></input>
+            <div className="register">
+                    <div className="register__left__messages">
+                        {error && <h2>{error}</h2>}
+                        {loading && <h2>Loading...</h2>}
+                        {message}
+                    </div>
+                    <div className="register__hero">
+                        <h2>Register</h2>
+                    </div>
+                    <div className="register__formcontainer">
+                        <form onSubmit={submitHandler} className="form">
+                        <div className="form__inputbox">
                             <label htmlFor="name">Name</label>
-                        </div>
-                        <div className="form__inputbox">
-                            <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-                            <label htmlFor="email">Email</label>
-                        </div>
+                                <input id="name" type="name" value={name} onChange={(e) => setName(e.target.value)}></input>
+                            </div>
+                            <div className="form__inputbox">
+                                <label htmlFor="email">Email</label>
+                                <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                            </div>
 
-                        <div className="form__inputbox">
-                            <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
-                            <label htmlFor="password">Password</label>
-                        </div>
+                            <div className="form__inputbox">
+                                <label htmlFor="password">Password</label>
+                                <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                            </div>
 
-                        <div className="form__inputbox">
-                            <input id="confirmPassword" type="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input>
-                            <label htmlFor="confirmPassword">Confirm Password</label>
-                        </div>
+                            <div className="form__inputbox">
+                                <label htmlFor="confirmPassword">Confirm Password</label>
+                                <input id="confirmPassword" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input>
+                            </div>
 
-                        <div className="form__buttonbox">
-                            <button type="submit">Log In</button>
-                        </div>
-                    </form>
-                </div>
-
-                <div className="login__left__redirect">
-                    <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>Log In Instead</Link>
-                </div>
+                            <div className="form__buttonbox">
+                                <button type="submit">Log In</button>
+                            </div>
+                        </form>
+                    </div>
             </div>
-        </div>
         </Layout>
     )
 }

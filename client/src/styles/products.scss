@@ -1,0 +1,25 @@
+
+
+.product{
+    text-align: center;
+    font-size: 1rem;
+    a{
+        color: black;
+    }
+
+    &__btn{
+        padding: .4rem;
+        button{
+            color:$yellow;
+            background-color: black;
+            border-radius: .2rem;
+            padding: .7rem;
+            border: none;
+            margin: .2rem;
+            &:hover{
+                background-color: rgb(88, 88, 88);
+                cursor: pointer;
+            }
+        }
+    }
+}

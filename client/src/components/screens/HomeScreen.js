@@ -31,11 +31,11 @@ const HomeScreen = () => {
                         <p>Ship to x country only.</p>
                     </div>
                 </div>
-                {/* <div className='products'>
+                <div className='products'>
                     {products.map(product => (
                         <Product key={product._id} product={product} />
                     ))}
-                </div> */}
+                </div>
                 
             </>}
             
