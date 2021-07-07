@@ -7,9 +7,9 @@ import Layout from '../../core/Layout.js';
 
 const RegisterScreen = ({location, history}) => {
     const [name, setName] = useState('');
-    const [email, setEmail] = useState('mertuygur02@gmail.com');
-    const [password, setPassword] = useState('123456');
-    const [confirmPassword, setConfirmPassword] = useState('123456');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [message, setMessage] = useState('');
 
     const dispatch = useDispatch();
@@ -37,7 +37,7 @@ const RegisterScreen = ({location, history}) => {
     return (
         <Layout>
             <div className="register">
-                    <div className="register__left__messages">
+                    <div className="messages">
                         {error && <h2>{error}</h2>}
                         {loading && <h2>Loading...</h2>}
                         {message}

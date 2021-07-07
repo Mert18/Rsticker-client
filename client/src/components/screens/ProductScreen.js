@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 import {useDispatch, useSelector} from 'react-redux';
 import {listProductDetails} from '../../actions/productActions.js';
+import Product from '../Product';
 
 const ProductScreen = ({match, history}) => {
     const [qty, setQty] = useState(1);
@@ -17,7 +18,7 @@ const ProductScreen = ({match, history}) => {
     }, [match, dispatch]);
 
     const addToCartHandler = () => {
-        history.push(`/cart/${match.params.id}?qty=${qty}`)
+        history.push(`/cart/${match.params.id}?qty=${qty}`);
     }
     const handleQty = (e) => {
         setQty(e.target.value);
@@ -27,9 +28,7 @@ const ProductScreen = ({match, history}) => {
         <Layout>
             <div className="productsc">
                 <div className="productsc__head">
-                    <div className="productsc__head__goback">
-                        <Link to="/"><i className="fas fa-arrow-left"></i>Go Back</Link>
-                    </div>
+                    <Link to="/"><i className="fas fa-arrow-left"></i>Go Back</Link>
                 </div>
 
                 {loading ? 
@@ -49,7 +48,7 @@ const ProductScreen = ({match, history}) => {
                                 <option>4</option>
                                 <option>5</option>
                             </select>
-                            <button onClick={addToCartHandler}>ADD TO CART</button>
+                            <button onClick={addToCartHandler}><i class="fas fa-shopping-cart"></i></button>
                         </div>
                         <div className="productsc__main__image">
                             <img src={product.image} alt={product.description} width="350px" />
@@ -57,15 +56,6 @@ const ProductScreen = ({match, history}) => {
                     </div>
                 )}
                 
-                <div className="productsc__foot">
-                    <div className="productsc__foot__title">
-                        <h3>Every sticker have the following properties.</h3>
-                        <ul>
-                            <li>Every sticker's price is $0.50.</li>
-
-                        </ul>
-                    </div>
-                </div>
             </div>        
         </Layout>
     )

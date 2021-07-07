@@ -4,11 +4,20 @@
     display: grid;
     grid-template-columns: repeat(24, 1fr);
 
+
     &__buttonbox {
         display: flex;
         justify-content: center;
         align-items: center;
         margin: .6rem;
+        button{
+            padding: .4rem;
+            background: transparent;
+            cursor: pointer;
+            &:hover{
+                background-color: rgb(247, 243, 243);
+            }
+        }
     }
 
     &__message {
@@ -43,14 +52,5 @@
             }
         }
 
-        button {
-            font-size: 1.2rem;
-            padding: .5rem;
-            outline: none;
-            &:hover {
-                background-color: rgb(58, 6, 6);
-                cursor: pointer;
-            }
-        }
     }
 }

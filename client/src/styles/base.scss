@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-$yellow: yellow;
+$yellow: rgb(252, 252, 71);
 
 *,
 *::before,
@@ -16,6 +16,8 @@ $yellow: yellow;
 body {
     font-size: 62.5%;
     font-family: 'Poppins', sans-serif;
+    background-color: rgb(250, 252, 232);
+
 }
 
 .active{

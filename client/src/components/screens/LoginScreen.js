@@ -6,8 +6,8 @@ import {login} from '../../actions/userActions.js';
 import Layout from '../../core/Layout.js';
 
 const LoginScreen = ({location, history}) => {
-    const [email, setEmail] = useState('mertuygur02@gmail.com');
-    const [password, setPassword] = useState('123456');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const dispatch = useDispatch();
 
@@ -29,7 +29,7 @@ const LoginScreen = ({location, history}) => {
     return (
         <Layout>
             <div className="login">
-                <div className="login__messages">
+                <div className="messages">
                     {error && <h2>{error}</h2>}
                     {loading && <h2>Loading...</h2>}
                 </div>

@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import Layout from '../../core/Layout.js';
 
 import {getUserDetails, updateUserProfile} from '../../actions/userActions.js';
+import { listMyOrders } from '../../actions/orderActions.js'
 import { userUpdateProfileReducer } from '../../reducers/userReducers.js';
 
 const ProfileScreen = ({location, history}) => {
@@ -25,12 +26,16 @@ const ProfileScreen = ({location, history}) => {
     const userUpdateProfile = useSelector(state => state.userLogin);
     const {success} = userUpdateProfile;
 
+    const orderListMy = useSelector(state => state.orderListMy);
+    const {loading: loadingOrders, error: errorOrders, orders} = orderListMy;
+
     useEffect(() => {
         if(!userInfo){
             history.push('/login')
         }else {
             if(!user.name){
                 dispatch(getUserDetails('profile'))
+                dispatch(listMyOrders());
             } else {
                 setName(user.name)
                 setEmail(user.email)
