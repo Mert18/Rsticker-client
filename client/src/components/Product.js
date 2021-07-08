@@ -13,7 +13,7 @@ const Product = ({ product }) => {
       <div className="product__btn">
         <Link to={`/product/${product._id}`}>
           <button>
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
           </button>
         </Link>
       </div>
