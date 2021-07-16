@@ -42,12 +42,13 @@
 }
 
 .checkoutsteps {
-  grid-column: 3 / 18;
+  grid-column: 1 / -1;
   background-color: $yellow;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  height: 9vh;
 }
 .step {
   height: 100%;
@@ -57,7 +58,7 @@
   padding: 0.5rem;
 }
 .active {
-  color: green;
+  color: rgb(81, 182, 41);
 }
 
 .disabled {
