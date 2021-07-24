@@ -11,8 +11,6 @@ const PlaceOrderScreen = ({ history }) => {
 
   if (!cart.shippingAddress.address) {
     history.push("/shipping");
-  } else if (!cart.paymentMethod) {
-    history.push("/payment");
   }
   //   Calculate prices
   const addDecimals = (num) => {
