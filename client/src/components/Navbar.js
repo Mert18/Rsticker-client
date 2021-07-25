@@ -10,7 +10,7 @@ const Navbar = ({ match }) => {
   const isActive = (path) => {
     if (match.path === path) {
       return {
-        textDecoration: `yellow underline`,
+        textDecoration: `#2cf6ba underline`,
         textDecorationThickness: "6px",
       };
     } else {
@@ -35,29 +35,29 @@ const Navbar = ({ match }) => {
       </div>
       <div className="nav__middle">
         <Link to="/" style={isActive("/")}>
-          Home
+          Ana Sayfa
         </Link>
         <Link to="/custom" style={isActive("/custom")}>
-          Custom
+          Özel Yapım
         </Link>
       </div>
       {userInfo ? (
         <div className="nav__right">
           <Link to="/profile" style={isActive("/profile")}>
-            Profile
+            Profil
           </Link>
           <Link to="/cart" style={isActive("/cart")}>
-            Cart
+            Sepet
           </Link>
           <button onClick={logoutHandler}>Logout</button>
         </div>
       ) : (
         <div className="nav__right">
           <Link to="/login" style={isActive("/login")}>
-            Log In
+            Giriş Yap
           </Link>
           <Link to="/register" style={isActive("/register")}>
-            Register
+            Kayıt Ol
           </Link>
         </div>
       )}

@@ -55,15 +55,22 @@ const ProfileScreen = ({ location, history }) => {
   };
   return (
     <Layout>
-      <div className="profile">
+      <section className="profile">
         <div className="profile__message">
           <h2>{message}</h2>
+        </div>
+        <div className="profile__nav">
+          <ul>
+            <li>Bilgilerim</li>
+            <li>Profili Güncelle</li>
+            <li>Siparişlerim</li>
+          </ul>
         </div>
         <div className="profile__form__container">
           <h2 className="profile__form__title">Change Profile</h2>
           <form onSubmit={submitHandler}>
             <div className="profile__inputbox">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">İsim</label>
               <input
                 id="name"
                 type="name"
@@ -81,7 +88,7 @@ const ProfileScreen = ({ location, history }) => {
               ></input>
             </div>
             <div className="profile__inputbox">
-              <label htmlFor="password">New Password</label>
+              <label htmlFor="password">Yeni Şifre</label>
               <input
                 id="password"
                 type="password"
@@ -90,7 +97,7 @@ const ProfileScreen = ({ location, history }) => {
               ></input>
             </div>
             <div className="profile__inputbox">
-              <label htmlFor="confirmPassword">Confirm New Password</label>
+              <label htmlFor="confirmPassword">Yeni Şifre Yeniden</label>
               <input
                 id="confirmPassword"
                 type="confirmPassword"
@@ -99,7 +106,7 @@ const ProfileScreen = ({ location, history }) => {
               ></input>
             </div>
             <div className="profile__buttonbox">
-              <button type="submit">CHANGE</button>
+              <button type="submit"></button>
             </div>
           </form>
         </div>
@@ -132,7 +139,7 @@ const ProfileScreen = ({ location, history }) => {
           </table>
         </div> */}
         {/* ADDRESS */}
-      </div>
+      </section>
     </Layout>
   );
 };

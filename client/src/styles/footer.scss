@@ -1,17 +1,16 @@
-
-.footer{
-    background-color: $yellow;
-    height: 30vh;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+.footer {
+  background-color: $main;
+  height: 30vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
 }
 
-.social{
-    grid-column: 2 / 5;
-    padding: 2rem;
-    font-size: 1rem;
+.social {
+  grid-column: 2 / 5;
+  padding: 2rem;
+  font-size: 1rem;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

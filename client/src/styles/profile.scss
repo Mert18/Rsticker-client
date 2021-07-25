@@ -1,56 +1,80 @@
-
-
 .profile {
-    display: grid;
-    grid-template-columns: repeat(24, 1fr);
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
 
-
-    &__buttonbox {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: .6rem;
-        button{
-            padding: .4rem;
-            background: transparent;
-            cursor: pointer;
-            &:hover{
-                background-color: rgb(247, 243, 243);
-            }
-        }
+  &__buttonbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      width: 3rem;
+      height: 3rem;
+      padding: 0.4rem;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 50%;
+      &:hover {
+        background-color: $flavor;
+      }
     }
+  }
 
-    &__message {
-        grid-column: 1 / -1;
-        text-align: center;
-        padding: 3rem;
-    }
-}
-.profile__form__title {
+  &__message {
+    grid-column: 1 / -1;
     text-align: center;
-    font-size: 1.1rem;
+  }
+}
+
+.profile__nav {
+  grid-column: 1 / 9;
+  background-color: $flavor;
+  display: flex;
+  justify-content: center;
+}
+.profile__nav ul {
+  width: 100%;
+  padding-top: 2rem;
+}
+.profile__nav ul li {
+  font-size: 1.3rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $flavor2;
+}
+
+.profile__form__title {
+  text-align: center;
+  font-size: 1.1rem;
 }
 .profile__form__container {
-    padding: 1.2rem;
-    grid-column: 3 / 11;
+  padding: 2rem;
+  grid-column: 9 / 23;
+  width: 70%;
+  justify-self: center;
+  form {
+    display: flex;
+    flex-direction: column;
 
-    form {
-        display: flex;
-        flex-direction: column;
+    .profile__inputbox {
+      display: flex;
+      flex-direction: column;
+      padding: 0.4rem;
+      label {
+        font-size: 1rem;
+        padding: 0.4rem 0rem;
+      }
 
-        .profile__inputbox {
-            display: flex;
-            flex-direction: column;
-            padding: .4rem;
-            label {
-                font-size: 1rem;
-            }
-
-            input {
-                font-size: 1.1rem;
-                padding: .4rem;
-            }
+      input {
+        font-size: 1.1rem;
+        padding: 0.6rem;
+        border: 2px solid $main;
+        &:focus {
+          outline-width: 3px;
+          outline-color: $flavor;
         }
-
+      }
     }
+  }
 }

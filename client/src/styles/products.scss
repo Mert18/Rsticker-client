@@ -1,25 +1,23 @@
+.product {
+  text-align: center;
+  font-size: 1rem;
+  a {
+    color: black;
+  }
 
-
-.product{
-    text-align: center;
-    font-size: 1rem;
-    a{
-        color: black;
+  &__btn {
+    padding: 0.4rem;
+    button {
+      color: black;
+      background-color: $main;
+      border-radius: 0.2rem;
+      padding: 0.7rem;
+      border: none;
+      margin: 0.2rem;
+      &:hover {
+        background-color: $flavor;
+        cursor: pointer;
+      }
     }
-
-    &__btn{
-        padding: .4rem;
-        button{
-            color:black;
-            background-color: $yellow;
-            border-radius: .2rem;
-            padding: .7rem;
-            border: none;
-            margin: .2rem;
-            &:hover{
-                background-color: rgb(245, 245, 37);
-                cursor: pointer;
-            }
-        }
-    }
+  }
 }

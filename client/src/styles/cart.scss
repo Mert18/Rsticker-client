@@ -8,7 +8,7 @@
   }
   &__info {
     grid-column: 1 / -1;
-    background-color: $yellow;
+    background-color: $main;
     height: 8vh;
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@
         padding: 0.3rem;
         background: transparent;
         &:hover {
-          background-color: $yellow;
+          background-color: $main;
           transition: all 0.3s;
         }
       }
@@ -47,7 +47,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: yellowgreen;
+    background-color: main;
     padding: 2rem;
 
     &__total {
@@ -61,7 +61,7 @@
         padding: 0.7rem;
         transition: all 0.5s;
         &:hover {
-          background-color: $yellow;
+          background-color: $main;
           transition: all 0.5s;
           cursor: pointer;
         }
