@@ -11,6 +11,8 @@ import { listMyOrders } from "../../actions/orderActions.js";
 import { userUpdateProfileReducer } from "../../reducers/userReducers.js";
 
 const ProfileScreen = ({ location, history }) => {
+  const [current, setCurrent] = useState("bilgilerim");
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("mertuygur02@gmail.com");
   const [password, setPassword] = useState("");
@@ -30,7 +32,6 @@ const ProfileScreen = ({ location, history }) => {
 
   const orderListMy = useSelector((state) => state.orderListMy);
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy;
-
   useEffect(() => {
     if (!userInfo) {
       history.push("/login");
@@ -59,86 +60,115 @@ const ProfileScreen = ({ location, history }) => {
         <div className="profile__message">
           <h2>{message}</h2>
         </div>
+
         <div className="profile__nav">
           <ul>
-            <li>Bilgilerim</li>
-            <li>Profili Güncelle</li>
-            <li>Siparişlerim</li>
+            <li
+              onClick={() => {
+                setCurrent("bilgilerim");
+              }}
+            >
+              Bilgilerim
+            </li>
+            <li
+              onClick={() => {
+                setCurrent("guncelle");
+              }}
+            >
+              Profili Güncelle
+            </li>
+            <li
+              onClick={() => {
+                setCurrent("siparislerim");
+              }}
+            >
+              Siparişlerim
+            </li>
           </ul>
         </div>
-        <div className="profile__form__container">
-          <h2 className="profile__form__title">Change Profile</h2>
-          <form onSubmit={submitHandler}>
-            <div className="profile__inputbox">
-              <label htmlFor="name">İsim</label>
-              <input
-                id="name"
-                type="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              ></input>
+        {current === "bilgilerim" ? (
+          <div className="bilgilerim">
+            <div className="name">
+              <h1>{name}</h1>
             </div>
-            <div className="profile__inputbox">
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              ></input>
-            </div>
-            <div className="profile__inputbox">
-              <label htmlFor="password">Yeni Şifre</label>
-              <input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              ></input>
-            </div>
-            <div className="profile__inputbox">
-              <label htmlFor="confirmPassword">Yeni Şifre Yeniden</label>
-              <input
-                id="confirmPassword"
-                type="confirmPassword"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              ></input>
-            </div>
-            <div className="profile__buttonbox">
-              <button type="submit"></button>
-            </div>
-          </form>
-        </div>
-        {/* <div className="profile__orders">
-          <table>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>DATE</th>
-                <th>TOTAL</th>
-                <th>DELIVERED</th>
-              </tr>
-            </thead>
-            <tbody>
-              {orders.map((order) => (
-                <tr key={order._id}>
-                  <td>{order._id}</td>
-                  <td>{order.createdAt.substring(0, 10)}</td>
-                  <td>{order.totalPrice}</td>
-                  <td>
-                    {order.isDelivered ? (
-                      <h1>Delivered</h1>
-                    ) : (
-                      <h1>Not Delivered</h1>
-                    )}
-                  </td>
+          </div>
+        ) : current === "guncelle" ? (
+          <div className="profile__form__container">
+            <h2 className="profile__form__title">Bilgilerini Güncelle</h2>
+            <form onSubmit={submitHandler}>
+              <div className="profile__inputbox">
+                <label htmlFor="name">İsim</label>
+                <input
+                  id="name"
+                  type="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                ></input>
+              </div>
+              <div className="profile__inputbox">
+                <label htmlFor="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                ></input>
+              </div>
+              <div className="profile__inputbox">
+                <label htmlFor="password">Yeni Şifre</label>
+                <input
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                ></input>
+              </div>
+              <div className="profile__inputbox">
+                <label htmlFor="confirmPassword">Yeni Şifre Yeniden</label>
+                <input
+                  id="confirmPassword"
+                  type="confirmPassword"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                ></input>
+              </div>
+              <div className="profile__buttonbox">
+                <button type="submit"></button>
+              </div>
+            </form>
+          </div>
+        ) : current === "siparislerim" ? (
+          <div className="profile__orders">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>DATE</th>
+                  <th>TOTAL</th>
+                  <th>DELIVERED</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div> */}
-        {/* ADDRESS */}
+              </thead>
+              <tbody>
+                {orders.map((order) => (
+                  <tr key={order._id}>
+                    <td>{order._id}</td>
+                    <td>{order.createdAt.substring(0, 10)}</td>
+                    <td>{order.totalPrice}</td>
+                    <td>
+                      {order.isDelivered ? (
+                        <h1>Delivered</h1>
+                      ) : (
+                        <h1>Not Delivered</h1>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          ""
+        )}
       </section>
     </Layout>
   );

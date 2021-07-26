@@ -4,7 +4,7 @@ const products = [
         image: '/images/stickers/st1.svg',
         description: 'Explanation have to be made',
         category: 'Cyber',
-        dimensions: '8cm x 8cm'
+        dimensions: '8cm x 8cm',
     },
     {
         name: 'Example of Sticker 2',
