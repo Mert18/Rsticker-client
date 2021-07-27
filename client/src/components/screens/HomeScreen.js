@@ -27,9 +27,6 @@ const HomeScreen = () => {
             onChange={(e) => setFilt(e.target.value)}
           />
         </div>
-        <div className="search__categ">
-          <button onClick={() => setShowModal(!showModal)}>Categories</button>
-        </div>
         {showModal ? (
           <Modal setShowModal={setShowModal}>
             <div></div>

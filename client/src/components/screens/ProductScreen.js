@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { listProductDetails } from "../../actions/productActions.js";
-import Product from "../Product";
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
