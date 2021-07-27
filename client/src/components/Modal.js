@@ -9,9 +9,8 @@ const Modal = ({ setShowModal, children }) => {
     }
   };
   return ReactDom.createPortal(
-    <div className="modalContainer" ref={modalRef} onClick={closeModal}>
+    <div className="modalContainer" ref={modalRef}>
       <div className="modal">
-        <h2>This is a Modal</h2>
         {children}
         <button onClick={() => setShowModal(false)}>X</button>
       </div>

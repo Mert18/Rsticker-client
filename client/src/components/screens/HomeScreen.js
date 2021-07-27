@@ -31,7 +31,9 @@ const HomeScreen = () => {
           <button onClick={() => setShowModal(!showModal)}>Categories</button>
         </div>
         {showModal ? (
-          <Modal setShowModal={setShowModal}>hello world</Modal>
+          <Modal setShowModal={setShowModal}>
+            <div></div>
+          </Modal>
         ) : null}
       </div>
       {loading ? (
