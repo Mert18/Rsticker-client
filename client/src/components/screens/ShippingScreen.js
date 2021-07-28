@@ -30,25 +30,25 @@ const ShippingScreen = ({ history }) => {
 
         <form onSubmit={submitHandler} className="shipscreen__form">
           <div className="shipscreen__form__field">
-            <label>City</label>
-            <input
-              type="text"
-              value={address}
-              required
-              onChange={(e) => setAddress(e.target.value)}
-            />
-          </div>
-          <div className="shipscreen__form__field">
-            <label>Postal Code</label>
+            <label>Şehir</label>
             <input
               type="text"
               value={city}
               required
-              onChange={(e) => setCity(e.target.value)}
+              onChange={(e) => e.target.value}
             />
           </div>
           <div className="shipscreen__form__field">
-            <label>Address</label>
+            <label>Adres</label>
+            <input
+              type="text"
+              value={address}
+              required
+              onChange={(e) => setAddresssetCity(e.target.value)}
+            />
+          </div>
+          <div className="shipscreen__form__field">
+            <label>Posta Kodu</label>
             <textarea
               type="text"
               value={postalCode}
@@ -56,7 +56,7 @@ const ShippingScreen = ({ history }) => {
               onChange={(e) => setPostalCode(e.target.value)}
             />
           </div>
-          <button type="submit">SEND</button>
+          <button type="submit" id="submitbutton"></button>
         </form>
       </div>
     </Layout>

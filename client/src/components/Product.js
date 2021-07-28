@@ -1,7 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-const Product = ({ product }) => {
+const Product = ({ product, history, match }) => {
+  const addToCartHandler = (e) => {
+    e.preventDefault();
+    history.push(`/cart/${product._id}?qty=1`);
+  };
+
   return (
     <div className="product">
       <div className="product__image">
@@ -16,9 +21,12 @@ const Product = ({ product }) => {
             <i className="fas fa-search"></i>
           </button>
         </Link>
+        <button onClick={addToCartHandler}>
+          <i className="fas fa-shopping-cart"></i>
+        </button>
       </div>
     </div>
   );
 };
 
-export default Product;
+export default withRouter(Product);

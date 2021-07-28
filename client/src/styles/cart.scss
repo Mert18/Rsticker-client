@@ -3,7 +3,9 @@
   grid-template-columns: repeat(24, 1fr);
 
   &__title {
-    grid-column: 3 / -1;
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin: 2rem;
     font-size: 2rem;
   }
   &__info {
@@ -18,6 +20,7 @@
   &__items {
     grid-column: 1 / -1;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     .item {
       display: flex;

@@ -34,7 +34,6 @@ const PlaceOrderScreen = ({ history }) => {
   useEffect(() => {
     if (success) {
       history.push(`/order/${order._id}`);
-      dispatch({ type: ORDER_CREATE_RESET });
     }
     // eslint-disable-next-line
   }, [history, success]);
@@ -51,21 +50,38 @@ const PlaceOrderScreen = ({ history }) => {
       })
     );
   };
+  console.log(cart.cartItems);
   return (
     <Layout>
-      <div>
+      <div className="placeorder">
         <div className="checkoutsteps">
           <CheckoutSteps step1 step2 step3 />
         </div>
-        {/* PLACE ORDER SCREEN HERE. */}
-        {/* cart.shippingAddress.address 'city' 'postal code */}
-        {/* cart.cartItems.map */}
+        <div className="cartscreen__items">
+          {cart.cartItems.map((product) => {
+            return (
+              <div className="item">
+                <div className="item__image">
+                  <img src={product.image} alt={product.name} width="250px" />
+                </div>
+                <div>
+                  <h3>{product.name}</h3>
+                </div>
+                <h2>{product.qty} Adet</h2>
+              </div>
+            );
+          })}
+        </div>
+        <div className="address">
+          <p>{cart.shippingAddress.address}</p>
+          <p>{cart.shippingAddress.city}</p>
+          <p>{cart.shippingAddress.postalCode}</p>
+        </div>
         {error && <div>An Error Occured : {error}</div>}
-        hello place orderd
-        {/* Button to run handling. */}
-        <button onClick={placeOrderHandler}>hello</button>
-        {/* CONSOLE LOGLAR ILE COZERSIN BURADAKI SORUNU
-              HADI ASLANIM BENIM. YAPARSIN. */}
+
+        <button onClick={placeOrderHandler} className="placeorderbtn">
+          Tamamla
+        </button>
       </div>
     </Layout>
   );

@@ -19,6 +19,7 @@ const ProductScreen = ({ match, history }) => {
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
+
   const handleQty = (e) => {
     setQty(e.target.value);
   };
