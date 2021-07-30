@@ -1,0 +1,49 @@
+.productsc {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+
+  &__head {
+    grid-column: 1 / -1;
+    height: 5vh;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    margin: 1rem 2rem;
+    a {
+      color: black;
+    }
+  }
+
+  &__main {
+    grid-column: 2 / 24;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    padding: 2rem;
+    &__desc {
+      grid-column: 2 / 12;
+      font-size: 1.2rem;
+      padding: 2rem;
+
+      select {
+        margin: 2rem;
+        font-size: 1.4rem;
+        background: transparent;
+        width: 5rem;
+      }
+      button {
+        font-size: 1.2rem;
+        background: $primary;
+        border: none;
+        padding: 0.8rem;
+        &:hover {
+          background-color: $primary-variant;
+          cursor: pointer;
+          transition: all 0.3s;
+        }
+      }
+    }
+    &__image {
+      grid-column: 12 / -1;
+    }
+  }
+}

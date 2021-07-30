@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: $primary-variant;
+  color: $white;
+  height: 8vh;
+  &__text {
+    display: flex;
+    justify-content: center;
+
+    * {
+      margin-right: 1.7rem;
+      font-size: 1.1rem;
+      &:last-child {
+        margin-right: 0rem;
+      }
+    }
+  }
+}

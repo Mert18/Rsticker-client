@@ -1,0 +1,121 @@
+.profile {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+  &__buttonbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      width: 3rem;
+      height: 3rem;
+      padding: 0.4rem;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 50%;
+      &:hover {
+        background-color: $primary-variant;
+      }
+    }
+  }
+
+  &__message {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+}
+
+.profile__nav {
+  grid-column: 3 / 6;
+  background-color: $primary-variant;
+  grid-row: 2 / 12;
+}
+.profile__nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.profile__nav ul li {
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.profile__route {
+  grid-column: 6 / 23;
+  background-color: $primary-variant;
+  grid-row: 2 / 12;
+}
+
+.profile__form__title {
+  text-align: center;
+  font-size: 1.1rem;
+}
+.profile__form__container {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  form {
+    display: flex;
+    flex-direction: column;
+
+    .profile__inputbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 0.4rem;
+      label {
+        font-size: 1rem;
+        padding: 0.4rem 0rem;
+      }
+
+      input {
+        font-size: 1.1rem;
+        padding: 0.6rem;
+        width: 40%;
+        border: 2px solid $primary;
+        &:focus {
+          outline-width: 3px;
+          outline-color: $primary-variant;
+        }
+      }
+    }
+  }
+}
+
+.bilgilerim {
+  font-size: 1.1rem;
+  min-height: 50vh;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.name {
+  margin-bottom: 3rem;
+}
+
+.profile__orders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  table thead {
+    background-color: $primary;
+  }
+  table tbody tr td {
+    padding: 1rem;
+  }
+}
