@@ -28,38 +28,40 @@ const LoginScreen = ({ location, history }) => {
   return (
     <Layout>
       <div className="login">
-        <div className="messages">
-          {error && <h2>{error}</h2>}
-          {loading && <h2>Loading...</h2>}
-        </div>
-
-        <div className="login__formcontainer">
-          <div className="login__hero">
-            <h2>Giriş Yap</h2>
+        <div className="formwrapper">
+          <div className="messages">
+            {error && <h2>{error}</h2>}
+            {loading && <h2>Loading...</h2>}
           </div>
-          <form onSubmit={submitHandler} className="form">
-            <div className="form__inputbox">
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              ></input>
+
+          <div className="formcontainer">
+            <div className="formcontainer__hero">
+              <h2>Giriş Yap</h2>
             </div>
-            <div className="form__inputbox">
-              <label htmlFor="password">Şifre</label>
-              <input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              ></input>
-            </div>
-            <div className="form__buttonbox">
-              <button type="submit"></button>
-            </div>
-          </form>
+            <form onSubmit={submitHandler} className="formcontainer__form">
+              <div className="form__inputbox">
+                <label htmlFor="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                ></input>
+              </div>
+              <div className="form__inputbox">
+                <label htmlFor="password">Şifre</label>
+                <input
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                ></input>
+              </div>
+              <div className="form__buttonbox">
+                <button type="submit"></button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </Layout>

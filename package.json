@@ -1,7 +1,6 @@
 {
   "name": "client",
   "version": "1.0.0",
-  "proxy": "http://127.0.0.1:5000",
   "private": "true",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
@@ -16,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "date-fns": "^2.23.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
