@@ -11,7 +11,7 @@ const CustomScreen = () => {
           height="256px"
           alt="in construction."
         />
-        <p>Yakında.</p>
+        <p>Soon.</p>
       </div>
     </Layout>
   );

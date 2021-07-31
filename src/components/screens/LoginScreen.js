@@ -34,12 +34,12 @@ const LoginScreen = ({ location, history }) => {
             {loading && <h2>Loading...</h2>}
           </div>
 
-          <div className="formcontainer">
-            <div className="formcontainer__hero">
+          <div className="formwrapper">
+            <div className="title">
               <h2>Giriş Yap</h2>
             </div>
-            <form onSubmit={submitHandler} className="formcontainer__form">
-              <div className="form__inputbox">
+            <form onSubmit={submitHandler} className="form">
+              <div className="inputbox">
                 <label htmlFor="email">Email</label>
                 <input
                   id="email"
@@ -48,7 +48,7 @@ const LoginScreen = ({ location, history }) => {
                   onChange={(e) => setEmail(e.target.value)}
                 ></input>
               </div>
-              <div className="form__inputbox">
+              <div className="inputbox">
                 <label htmlFor="password">Şifre</label>
                 <input
                   id="password"
@@ -57,9 +57,7 @@ const LoginScreen = ({ location, history }) => {
                   onChange={(e) => setPassword(e.target.value)}
                 ></input>
               </div>
-              <div className="form__buttonbox">
-                <button type="submit"></button>
-              </div>
+              <button type="submit"></button>
             </form>
           </div>
         </div>

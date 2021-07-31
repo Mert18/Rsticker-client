@@ -43,12 +43,12 @@ const RegisterScreen = ({ location, history }) => {
             {message}
           </div>
 
-          <div className="register__formcontainer">
-            <div className="register__hero">
+          <div className="formwrapper">
+            <div className="title">
               <h2>Kayıt Ol</h2>
             </div>
             <form onSubmit={submitHandler} className="form">
-              <div className="form__inputbox">
+              <div className="inputbox">
                 <label htmlFor="name">İsim</label>
                 <input
                   id="name"
@@ -57,7 +57,7 @@ const RegisterScreen = ({ location, history }) => {
                   onChange={(e) => setName(e.target.value)}
                 ></input>
               </div>
-              <div className="form__inputbox">
+              <div className="inputbox">
                 <label htmlFor="email">Email</label>
                 <input
                   id="email"
@@ -67,7 +67,7 @@ const RegisterScreen = ({ location, history }) => {
                 ></input>
               </div>
 
-              <div className="form__inputbox">
+              <div className="inputbox">
                 <label htmlFor="password">Şifre</label>
                 <input
                   id="password"
@@ -77,7 +77,7 @@ const RegisterScreen = ({ location, history }) => {
                 ></input>
               </div>
 
-              <div className="form__inputbox">
+              <div className="inputbox">
                 <label htmlFor="confirmPassword">Şifre Yeniden</label>
                 <input
                   id="confirmPassword"
@@ -86,10 +86,7 @@ const RegisterScreen = ({ location, history }) => {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 ></input>
               </div>
-
-              <div className="form__buttonbox">
-                <button type="submit"></button>
-              </div>
+              <button type="submit"></button>
             </form>
           </div>
         </div>

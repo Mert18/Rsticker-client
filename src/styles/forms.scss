@@ -1,37 +1,74 @@
 .login {
-  grid-column: 1/-1;
-  border: 4px solid red;
   position: relative;
-  height: 90vh;
-  background-color: $white;
+  grid-column: 1 / -1;
+  min-height: 80vh;
 }
-.register {
-  grid-column: 1/-1;
-  border: 4px solid red;
-  position: relative;
-  height: 90vh;
-  background-color: $white;
-}
-.formcontainer {
-  border: 3px solid red;
-}
-.form__inputbox {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
 
-  input {
-    height: 6vh;
-  }
+.register {
+  position: relative;
+  grid-column: 1 / -1;
+  min-height: 100vh;
 }
+
 .formwrapper {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background: $white;
+  color: $primary;
   padding: 2em;
-  text-align: center;
-  background-color: $white-variant;
-  font-size: 1.1rem;
+  border-radius: 10px;
+  box-shadow: 10px 10px 150px -65px rgba(0, 0, 0, 0.75);
+  width: 25rem;
+  .title {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 2rem;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    button {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      margin: 1rem;
+      background: $red;
+      &:hover {
+        background: $red2;
+        cursor: pointer;
+      }
+    }
+    .inputbox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0.2rem;
+      label {
+        font-size: 1rem;
+      }
+      input {
+        min-height: 8vh;
+        width: 16rem;
+        color: $primary;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 0.5rem;
+        border: 2px solid $white-variant;
+        outline: none;
+      }
+    }
+
+    a {
+      color: inherit;
+    }
+  }
 }
