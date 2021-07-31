@@ -18,10 +18,7 @@ const HomeScreen = () => {
   return (
     <section className="home">
       <article className="home__bg">
-        <img
-          src="/images/stickers/herobg.svg"
-          alt="many stickers on the wall"
-        />
+        <img src="/images/stickers/herobg.svg" alt="sale banner" />
       </article>
       <article className="search">
         <div className="search__input">
