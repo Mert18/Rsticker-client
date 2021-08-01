@@ -65,7 +65,7 @@ export const register = (name, email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      `${process.env.REACT_APP_API}/api/users`,
+      `${process.env.REACT_APP_API}/api/users/register`,
       { name, email, password },
       config
     );
