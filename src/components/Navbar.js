@@ -29,7 +29,7 @@ const Navbar = ({ match }) => {
       <div className="nav__left">
         <div className="nav__left__back"></div>
         <div className="nav__left__front">
-          <Link to="/">sticker.com</Link>
+          <Link to="/">rsticker.net</Link>
         </div>
       </div>
       <div className="nav__middle">

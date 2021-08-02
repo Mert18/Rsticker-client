@@ -1,0 +1,31 @@
+.orderscreen {
+  grid-column: 1 / -1;
+  justify-self: center;
+  padding: 3rem;
+  .track {
+    display: flex;
+    justify-content: space-evenly;
+    a {
+      font-size: 1.8rem;
+      i {
+        padding: 1rem;
+      }
+    }
+  }
+  h3 {
+    font-size: 3rem;
+    padding: 1rem;
+    i {
+      padding: 1rem;
+
+      color: green;
+    }
+  }
+
+  p {
+    i {
+      padding: 1rem;
+    }
+    padding: 1rem;
+  }
+}

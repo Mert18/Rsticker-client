@@ -55,7 +55,7 @@ const CartScreen = ({ match, location, history }) => {
                     removeFromCartHandler(item.product);
                   }}
                 >
-                  Remove
+                  <i className="fas fa-trash"></i>
                 </button>
               </li>
             ))}
@@ -63,7 +63,7 @@ const CartScreen = ({ match, location, history }) => {
         )}
         <div className="cartscreen__footer">
           <div>
-            <h2>
+            <h2 className="cartscreen__footer__amount">
               Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}){" "}
               Items
             </h2>
@@ -75,12 +75,11 @@ const CartScreen = ({ match, location, history }) => {
 
           <div className="cartscreen__footer__proceed">
             <button
+              id="btn"
               type="button"
               disabled={cartItems.length === 0}
               onClick={checkoutHandler}
-            >
-              Checkout
-            </button>
+            ></button>
           </div>
         </div>
       </div>

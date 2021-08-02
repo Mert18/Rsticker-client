@@ -1,36 +1,21 @@
 .nav {
-  display: grid;
-  grid-template-columns: repeat(24, 1fr);
-  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   height: 14vh;
 }
 
 .nav__left {
-  grid-column: 2 / 5;
-  justify-self: center;
-  align-self: center;
   position: relative;
-  &__back {
-    position: absolute;
-    top: -40px;
-    left: -5px;
-    width: 90px;
-    height: 70px;
-    background-color: $red;
-    z-index: -999;
-  }
   &__front {
     z-index: 999;
     a {
-      color: $primary;
+      color: $red;
+      font-size: 1.7rem;
     }
   }
 }
 .nav__middle {
-  grid-column: 6 / 15;
-  justify-self: center;
-  align-self: center;
-
   a {
     margin-right: 2rem;
     &:last-child {
@@ -39,10 +24,6 @@
   }
 }
 .nav__right {
-  grid-column: 16 / 22;
-  justify-self: center;
-  align-self: center;
-
   a {
     margin-right: 2rem;
     &:last-child {
@@ -54,7 +35,6 @@
     background: transparent;
     border: none;
     outline: none;
-    font-size: 1rem;
     color: $red;
     font-weight: 700;
     &:hover {
@@ -76,7 +56,6 @@
   color: $primary;
 }
 .burger__user a {
-  font-size: 2rem;
   color: $red;
   margin: 0rem 1rem;
 }

@@ -1,0 +1,16 @@
+.placeorder {
+  grid-column: 1 / -1;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  button {
+    grid-column: 1/ -1;
+    justify-self: center;
+  }
+}
+
+.address {
+  grid-column: 1 / -1;
+  justify-self: center;
+}

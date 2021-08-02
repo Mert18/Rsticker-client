@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import CheckoutSteps from "../CheckoutSteps";
 import { createOrder } from "../../actions/orderActions.js";
 import Layout from "../../core/Layout";
 
@@ -54,9 +53,6 @@ const PlaceOrderScreen = ({ history }) => {
   return (
     <Layout>
       <div className="placeorder">
-        <div className="checkoutsteps">
-          <CheckoutSteps step1 step2 step3 />
-        </div>
         <div className="cartscreen__items">
           {cart.cartItems.map((product) => {
             return (
@@ -67,11 +63,12 @@ const PlaceOrderScreen = ({ history }) => {
                 <div>
                   <h3>{product.name}</h3>
                 </div>
-                <h2>{product.qty} Adet</h2>
+                <h2>{product.qty}</h2>
               </div>
             );
           })}
         </div>
+
         <div className="address">
           <p>{cart.shippingAddress.address}</p>
           <p>{cart.shippingAddress.city}</p>
@@ -79,9 +76,7 @@ const PlaceOrderScreen = ({ history }) => {
         </div>
         {error && <div>An Error Occured : {error}</div>}
 
-        <button onClick={placeOrderHandler} className="placeorderbtn">
-          Tamamla
-        </button>
+        <button onClick={placeOrderHandler} id="btn"></button>
       </div>
     </Layout>
   );

@@ -20,10 +20,9 @@
   padding: 2em;
   border-radius: 10px;
   box-shadow: 10px 10px 150px -65px rgba(0, 0, 0, 0.75);
-  width: 25rem;
+  width: 45rem;
   .title {
     text-align: center;
-    font-size: 1.2rem;
     margin: 2rem;
   }
 
@@ -34,8 +33,8 @@
     align-items: center;
     width: 100%;
     button {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 3.5rem;
+      height: 3.5rem;
       border-radius: 50%;
       border: none;
       outline: none;
@@ -53,22 +52,53 @@
       align-items: flex-start;
       margin: 0.2rem;
       label {
-        font-size: 1rem;
+        font-size: 1.3rem;
+        padding: 0.5rem 0rem;
       }
       input {
         min-height: 8vh;
-        width: 16rem;
+        width: 25rem;
         color: $primary;
         font-weight: 700;
-        font-size: 1.1rem;
         padding: 0.5rem;
         border: 2px solid $white-variant;
         outline: none;
+        font-size: 1.6rem;
+      }
+      textarea {
+        min-height: 8vh;
+        width: 25rem;
+        color: $primary;
+        font-weight: 700;
+        padding: 0.5rem;
+        border: 2px solid $white-variant;
+        outline: none;
+        word-break: break-word;
+        resize: none;
+        font-size: 1.8rem;
       }
     }
 
     a {
       color: inherit;
     }
+  }
+}
+
+#textarea {
+  height: 25vh;
+}
+
+#btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  margin: 1rem;
+  background: $red;
+  &:hover {
+    background: $red2;
+    cursor: pointer;
   }
 }

@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import Product from "../Product";
 import { listProducts } from "../../actions/productActions.js";
 import { useDispatch, useSelector } from "react-redux";
-import Modal from "../Modal.js";
 
 const HomeScreen = () => {
   const [filt, setFilt] = useState("");
-  const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
 
   const productList = useSelector((state) => state.productList);
@@ -34,11 +32,6 @@ const HomeScreen = () => {
           <p>New</p>
           <p>Popular</p>
         </div>
-        {showModal ? (
-          <Modal setShowModal={setShowModal}>
-            <div></div>
-          </Modal>
-        ) : null}
       </article>
       {loading ? (
         <h2>Loading</h2>

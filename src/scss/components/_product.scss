@@ -53,3 +53,27 @@
     }
   }
 }
+
+.product {
+  text-align: center;
+  font-size: 1rem;
+  margin: 2rem;
+  a {
+    color: black;
+  }
+
+  &__btn {
+    padding: 0.5rem;
+    button {
+      color: $red;
+      border-radius: 0.2rem;
+      padding: 0.7rem;
+      border: none;
+      margin: 0.2rem;
+      &:hover {
+        background-color: $white-variant;
+        cursor: pointer;
+      }
+    }
+  }
+}
