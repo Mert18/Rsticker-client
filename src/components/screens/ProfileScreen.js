@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../../core/Layout.js";
-import { formatDistance, subDays } from "date-fns";
 
 import {
   getUserDetails,
@@ -33,6 +31,9 @@ const ProfileScreen = ({ location, history }) => {
   const orderListMy = useSelector((state) => state.orderListMy);
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy;
 
+  const propComparator = (propName) => (a, b) =>
+    a[propName] == b[propName] ? 0 : a[propName] < b[propName] ? 1 : -1;
+
   useEffect(() => {
     if (!userInfo) {
       history.push("/login");
@@ -61,8 +62,15 @@ const ProfileScreen = ({ location, history }) => {
         <div className="profile__message">
           <h2>{message}</h2>
         </div>
-        <div></div>
-        <div className="profile__nav">
+        <header className="profile__header">
+          <div className="profile__header__pic">
+            <img
+              src="/images/stickers/st1.svg"
+              width="140px"
+              height="140px"
+              alt="your favorite sticker"
+            />
+          </div>
           <ul>
             <li
               onClick={() => {
@@ -86,7 +94,7 @@ const ProfileScreen = ({ location, history }) => {
               Orders
             </li>
           </ul>
-        </div>
+        </header>
         <div className="profile__route">
           {current === "bilgilerim" ? (
             <div className="bilgilerim">
@@ -98,10 +106,10 @@ const ProfileScreen = ({ location, history }) => {
               </div>
             </div>
           ) : current === "guncelle" ? (
-            <div className="profile__form__container">
+            <div className="formwrapper">
               <h2 className="profile__form__title">Bilgilerini Güncelle</h2>
-              <form onSubmit={submitHandler}>
-                <div className="profile__inputbox">
+              <form onSubmit={submitHandler} className="form">
+                <div className="inputbox">
                   <label htmlFor="name">İsim</label>
                   <input
                     id="name"
@@ -110,7 +118,7 @@ const ProfileScreen = ({ location, history }) => {
                     onChange={(e) => setName(e.target.value)}
                   ></input>
                 </div>
-                <div className="profile__inputbox">
+                <div className="inputbox">
                   <label htmlFor="email">Email</label>
                   <input
                     id="email"
@@ -119,7 +127,7 @@ const ProfileScreen = ({ location, history }) => {
                     onChange={(e) => setEmail(e.target.value)}
                   ></input>
                 </div>
-                <div className="profile__inputbox">
+                <div className="inputbox">
                   <label htmlFor="password">Yeni Şifre</label>
                   <input
                     id="password"
@@ -128,7 +136,7 @@ const ProfileScreen = ({ location, history }) => {
                     onChange={(e) => setPassword(e.target.value)}
                   ></input>
                 </div>
-                <div className="profile__inputbox">
+                <div className="inputbox">
                   <label htmlFor="confirmPassword">Yeni Şifre Yeniden</label>
                   <input
                     id="confirmPassword"
@@ -137,9 +145,7 @@ const ProfileScreen = ({ location, history }) => {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   ></input>
                 </div>
-                <div className="profile__buttonbox">
-                  <button type="submit"></button>
-                </div>
+                <button type="submit"></button>
               </form>
             </div>
           ) : current === "siparislerim" ? (
@@ -154,7 +160,7 @@ const ProfileScreen = ({ location, history }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {orders.map((order) => (
+                  {orders.sort(propComparator("createdAt")).map((order) => (
                     <tr key={order._id}>
                       <td>{order._id}</td>
                       <td>{order.createdAt.substring(0, 10)}</td>

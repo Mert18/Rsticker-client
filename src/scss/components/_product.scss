@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(24, 1fr);
   grid-column: 1 / -1;
+
   &__head {
     grid-column: 1 / -1;
     height: 5vh;
@@ -21,26 +22,33 @@
     padding: 2rem;
     &__desc {
       grid-column: 2 / 12;
-      font-size: 1.2rem;
       padding: 2rem;
-
+      @include respond(tab-port) {
+        grid-column: 1 / -1;
+        justify-self: center;
+      }
+      @include respond(phone) {
+        grid-column: 1 / -1;
+        justify-self: center;
+      }
       select {
         margin: 3rem;
-        font-size: 1.4rem;
         background: transparent;
-        width: 3rem;
-        height: 2rem;
+        width: 6rem;
+        height: 4rem;
+        font-size: 1.6rem;
         background: $white;
         border: none;
         border-radius: 5px;
       }
       button {
-        font-size: 1.2rem;
+        font-size: 1.7rem;
         background: $white;
         color: $red;
         border: none;
         border-radius: 5px;
         padding: 0.8rem;
+
         &:hover {
           background-color: $white-variant;
           cursor: pointer;
@@ -50,6 +58,14 @@
     }
     &__image {
       grid-column: 12 / -1;
+      @include respond(tab-port) {
+        grid-column: 1 / -1;
+        justify-self: center;
+      }
+      @include respond(phone) {
+        grid-column: 1 / -1;
+        justify-self: center;
+      }
     }
   }
 }
@@ -58,6 +74,25 @@
   text-align: center;
   font-size: 1rem;
   margin: 2rem;
+  position: relative;
+  overflow: hidden;
+
+  &__bottom {
+    background: $white-variant;
+    width: 100%;
+    bottom: -45%;
+    position: absolute;
+    transition: all 0.5s ease;
+    color: $red;
+    padding: 1rem;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover .product__bottom {
+    bottom: 0%;
+    transition: all 0.5s ease;
+  }
   a {
     color: black;
   }

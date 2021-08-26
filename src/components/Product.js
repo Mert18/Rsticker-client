@@ -12,18 +12,20 @@ const Product = ({ product, history, match }) => {
       <div className="product__image">
         <img src={product.image} alt={product.description} width="300px" />
       </div>
-      <div className="product__name">
-        <p>{product.name}</p>
-      </div>
-      <div className="product__btn">
-        <Link to={`/product/${product._id}`}>
-          <button>
-            <i className="fas fa-search"></i>
+      <div className="product__bottom">
+        <div className="product__name">
+          <p>{product.name}</p>
+        </div>
+        <div className="product__btn">
+          <Link to={`/product/${product._id}`}>
+            <button>
+              <i className="fas fa-search"></i>
+            </button>
+          </Link>
+          <button onClick={addToCartHandler}>
+            <i className="fas fa-shopping-cart"></i>
           </button>
-        </Link>
-        <button onClick={addToCartHandler}>
-          <i className="fas fa-shopping-cart"></i>
-        </button>
+        </div>
       </div>
     </div>
   );

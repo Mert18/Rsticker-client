@@ -2,9 +2,6 @@
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(24, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  column-gap: 20px;
-  row-gap: 20px;
   &__buttonbox {
     display: flex;
     justify-content: center;
@@ -28,67 +25,50 @@
   }
 }
 
-.profile__nav {
-  grid-column: 3 / 6;
-  background-color: $primary-variant;
-  grid-row: 2 / 12;
-}
-.profile__nav ul {
+.profile__header {
+  grid-column: 1 / -1;
+  background-color: $white-variant;
+  height: 25vh;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2rem;
 }
-.profile__nav ul li {
+.profile__header img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+.profile__header ul {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.profile__header ul li {
   padding: 0.5rem;
+  font-size: 1.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 3rem;
+  &:last-child {
+    margin-right: 0rem;
+  }
   &:hover {
     cursor: pointer;
   }
 }
 
 .profile__route {
-  grid-column: 6 / 23;
-  background-color: $primary-variant;
-  grid-row: 2 / 12;
+  grid-column: 4 / 23;
+  background-color: $white-variant;
+  min-height: 80vh;
+  position: relative;
+  margin: 2rem;
 }
 
 .profile__form__title {
   text-align: center;
-}
-.profile__form__container {
-  padding: 2rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  form {
-    display: flex;
-    flex-direction: column;
-
-    .profile__inputbox {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 0.4rem;
-      label {
-        padding: 0.4rem 0rem;
-      }
-
-      input {
-        padding: 0.6rem;
-        width: 40%;
-        border: 2px solid $primary;
-        &:focus {
-          outline-width: 3px;
-          outline-color: $primary-variant;
-        }
-      }
-    }
-  }
 }
 
 .bilgilerim {
@@ -106,10 +86,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
   table thead {
-    background-color: $primary;
+    background-color: $white-variant;
   }
   table tbody tr td {
     padding: 1rem;
+    font-size: 1.3rem;
   }
 }
