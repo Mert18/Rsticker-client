@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
       {widthD < 900 ? <Burger /> : <Header />}
       <div className="hero">
         <div className="hero__text">
-          <p>Every sticker costs x.</p>
+          <p>Her sticker 3TL değerindedir.</p>
         </div>
       </div>
       <div className="container">{children}</div>

@@ -30,7 +30,7 @@ const LoginScreen = ({ location, history }) => {
         <div className="formwrapper">
           <div className="messages">
             {error && <h2>{error}</h2>}
-            {loading && <h2>Loading...</h2>}
+            {loading && <h2>Yükleniyor...</h2>}
           </div>
 
           <div className="formwrapper">

@@ -11,7 +11,6 @@ const RegisterScreen = ({ location, history }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
-
   const dispatch = useDispatch();
 
   const userRegister = useSelector((state) => state.userRegister);
@@ -23,12 +22,13 @@ const RegisterScreen = ({ location, history }) => {
     if (userInfo) {
       history.push(redirect);
     }
-  }, [history, userInfo, redirect]);
+    console.log(error);
+  }, [history, userInfo, redirect, error]);
 
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      setMessage("Passwords do not match.");
+      setMessage("Şifreler uyuşmuyor.");
     } else {
       dispatch(register(name, email, password));
     }
@@ -36,11 +36,11 @@ const RegisterScreen = ({ location, history }) => {
   return (
     <Layout>
       <div className="register">
-        <div className="formwrapper">
+        <div className="">
           <div className="messages">
-            {error && <h2>{error}</h2>}
-            {loading && <h2>Loading...</h2>}
-            {message}
+            <div className="message-error">
+              {error || (message && <p>{error || message}</p>)}
+            </div>
           </div>
 
           <div className="formwrapper">

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import Layout from "../../core/Layout";
 import { addToCart, removeFromCart } from "../../actions/cartActions.js";
 
@@ -26,11 +25,10 @@ const CartScreen = ({ match, location, history }) => {
   return (
     <Layout>
       <div className="cartscreen">
-        <h1 className="cartscreen__title">Shopping Cart</h1>
+        <h1 className="cartscreen__title">Sepetiniz</h1>
         {cartItems.length === 0 ? (
           <div className="cartscreen__info">
-            <h2>Your cart is empty.</h2>
-            <Link to="/">Go Back</Link>
+            <h2>Sepetiniz boş.</h2>
           </div>
         ) : (
           <div className="cartscreen__items">
@@ -64,8 +62,7 @@ const CartScreen = ({ match, location, history }) => {
         <div className="cartscreen__footer">
           <div>
             <h2 className="cartscreen__footer__amount">
-              Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}){" "}
-              Items
+              Toplam ({cartItems.reduce((acc, item) => acc + item.qty, 0)}) ürün
             </h2>
           </div>
 
