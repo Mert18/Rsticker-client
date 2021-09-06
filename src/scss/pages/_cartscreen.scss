@@ -17,14 +17,13 @@
   }
 
   &__items {
-    grid-column: 1 / -1;
+    grid-column: 3 / 20;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     .item {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       padding: 2rem;
       input {

@@ -33,62 +33,60 @@ const RegisterScreen = ({ location, history }) => {
       dispatch(register(name, email, password));
     }
   };
+
   return (
     <Layout>
       <div className="register">
-        <div className="">
+        <div className="formwrapper">
           <div className="messages">
             <div className="message-error">
-              {error || (message && <p>{error || message}</p>)}
+              {(error || message) && <p>{error || message}</p>}
             </div>
           </div>
-
-          <div className="formwrapper">
-            <div className="title">
-              <h2>Kayıt Ol</h2>
-            </div>
-            <form onSubmit={submitHandler} className="form">
-              <div className="inputbox">
-                <label htmlFor="name">İsim</label>
-                <input
-                  id="name"
-                  type="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                ></input>
-              </div>
-              <div className="inputbox">
-                <label htmlFor="email">Email</label>
-                <input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                ></input>
-              </div>
-
-              <div className="inputbox">
-                <label htmlFor="password">Şifre</label>
-                <input
-                  id="password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                ></input>
-              </div>
-
-              <div className="inputbox">
-                <label htmlFor="confirmPassword">Şifre Yeniden</label>
-                <input
-                  id="confirmPassword"
-                  type="password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                ></input>
-              </div>
-              <button type="submit"></button>
-            </form>
+          <div className="title">
+            <h2>Kayıt Ol</h2>
           </div>
+          <form onSubmit={submitHandler} className="form">
+            <div className="inputbox">
+              <label htmlFor="name">İsim</label>
+              <input
+                id="name"
+                type="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              ></input>
+            </div>
+            <div className="inputbox">
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></input>
+            </div>
+
+            <div className="inputbox">
+              <label htmlFor="password">Şifre</label>
+              <input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              ></input>
+            </div>
+
+            <div className="inputbox">
+              <label htmlFor="confirmPassword">Şifre Yeniden</label>
+              <input
+                id="confirmPassword"
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              ></input>
+            </div>
+            <button type="submit"></button>
+          </form>
         </div>
       </div>
     </Layout>

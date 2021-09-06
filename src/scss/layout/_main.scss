@@ -23,3 +23,33 @@
     }
   }
 }
+
+.cart-absolute {
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  background: $red;
+  color: $white;
+  padding: 1.2rem;
+  border-radius: 20%;
+  font-size: 1.5rem;
+}
+.cart-absolute-icon {
+  a {
+    color: $white;
+  }
+
+  &-qty {
+    position: absolute;
+    right: -30%;
+    top: -40%;
+    padding: 0.7rem;
+    background: $red2;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    height: max-content;
+  }
+}

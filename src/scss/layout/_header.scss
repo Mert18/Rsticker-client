@@ -3,7 +3,6 @@
   justify-content: space-around;
   align-items: center;
   height: 14vh;
-  position: fixed;
   top: 0%;
   width: 100%;
   background: $white;
@@ -12,12 +11,22 @@
 
 .nav__left {
   position: relative;
+
   &__front {
-    z-index: 999;
+    z-index: 9999;
+    padding: 1rem;
     a {
-      color: $red;
+      color: $primary;
       font-size: 1.7rem;
     }
+  }
+  &__back {
+    background-color: $red;
+    z-index: -99;
+    width: 80%;
+    top: -80%;
+    height: 100%;
+    position: absolute;
   }
 }
 .nav__middle {

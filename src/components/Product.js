@@ -6,7 +6,6 @@ const Product = ({ product, history, match }) => {
     e.preventDefault();
     history.push(`/cart/${product._id}?qty=1`);
   };
-
   return (
     <div className="product">
       <div className="product__image">
@@ -19,11 +18,11 @@ const Product = ({ product, history, match }) => {
         <div className="product__btn">
           <Link to={`/product/${product._id}`}>
             <button>
-              <i className="fas fa-search"></i>
+              <p>İNCELE</p>
             </button>
           </Link>
           <button onClick={addToCartHandler}>
-            <i className="fas fa-shopping-cart"></i>
+            <p>SEPETE EKLE</p>
           </button>
         </div>
       </div>

@@ -1,7 +1,12 @@
-.login {
+•••••••••.login {
   position: relative;
   grid-column: 1 / -1;
   min-height: 80vh;
+}
+
+.select {
+  width: 100%;
+  height: 6vh;
 }
 
 .register {
@@ -10,13 +15,13 @@
   min-height: 100vh;
 }
 
-.messages{
+.messages {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
 }
-.message-error{
+.message-error {
   color: red;
 }
 
@@ -61,23 +66,24 @@
       justify-content: center;
       align-items: flex-start;
       margin: 0.2rem;
+      width: 100%;
       label {
         font-size: 1.3rem;
         padding: 0.5rem 0rem;
       }
       input {
         min-height: 8vh;
-        width: 25rem;
         color: $primary;
         font-weight: 700;
         padding: 0.5rem;
         border: 2px solid $white-variant;
         outline: none;
+        width: 100%;
         font-size: 1.6rem;
       }
       textarea {
         min-height: 8vh;
-        width: 25rem;
+        width: 100%;
         color: $primary;
         font-weight: 700;
         padding: 0.5rem;

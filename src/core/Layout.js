@@ -4,10 +4,16 @@ import Header from "../components/Navbar";
 import Footer from "../components/Footer";
 import Burger from "../core/Burger";
 import useWindowDimensions from "../components/useWindowDimensions";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 const Layout = ({ children }) => {
   const { height, width } = useWindowDimensions();
   const [widthD, setwidthD] = useState(0);
+
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
 
   useEffect(() => {
     setwidthD(width);
@@ -15,9 +21,12 @@ const Layout = ({ children }) => {
   return (
     <Fragment>
       {widthD < 900 ? <Burger /> : <Header />}
-      <div className="hero">
-        <div className="hero__text">
-          <p>Her sticker 3TL değerindedir.</p>
+      <div className="cart-absolute">
+        <div className="cart-absolute-icon">
+          <Link to="/cart">
+            <i class="fas fa-shopping-cart"></i>
+            <div className="cart-absolute-icon-qty">{cartItems.length}</div>
+          </Link>
         </div>
       </div>
       <div className="container">{children}</div>

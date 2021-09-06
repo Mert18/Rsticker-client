@@ -10,6 +10,7 @@ const CartScreen = ({ match, location, history }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+
   useEffect(() => {
     if (productId) {
       dispatch(addToCart(productId, qty));
@@ -35,10 +36,10 @@ const CartScreen = ({ match, location, history }) => {
             {cartItems.map((item) => (
               <li key={item.product} className="item">
                 <div className="item__image">
-                  <img src={item.image} alt={item.name} width="250px" />
+                  <img src={item.image} alt={item.name} width="150px" />
                 </div>
                 <div>
-                  <h3>{item.name}</h3>
+                  <p>{item.name}</p>
                 </div>
                 <input
                   type="number"
@@ -67,7 +68,7 @@ const CartScreen = ({ match, location, history }) => {
           </div>
 
           <div className="cartscreen__footer__total">
-            ${cartItems.reduce((acc, item) => acc + item.qty * 0.5, 0)}
+            {cartItems.reduce((acc, item) => acc + item.qty * 3, 0)}&#x20BA;
           </div>
 
           <div className="cartscreen__footer__proceed">

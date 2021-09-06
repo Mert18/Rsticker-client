@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import { Link, withRouter } from "react-router-dom";
-import useDocumentScrollThrottled from "./useDocumentScrollThrottled";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../actions/userActions";
 

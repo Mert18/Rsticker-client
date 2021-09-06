@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saveShippingAddress } from "../../actions/cartActions.js";
+import cities from "../../cities.json";
 
 import Layout from "../../core/Layout.js";
 
@@ -24,20 +25,22 @@ const ShippingScreen = ({ history }) => {
       <div className="shipscreen">
         <div className="formwrapper">
           <div className="title">
-            <h2>Shipping</h2>
+            <h2>Kargo</h2>
           </div>
           <form onSubmit={submitHandler} className="form">
             <div className="inputbox">
-              <label>City</label>
-              <input
-                type="text"
-                value={city}
-                required
+              <label>Şehir</label>
+              <select
+                className="select"
                 onChange={(e) => setCity(e.target.value)}
-              />
+              >
+                {cities.map((city) => (
+                  <option key={city.id}>{city.name}</option>
+                ))}
+              </select>
             </div>
             <div className="inputbox">
-              <label>Address</label>
+              <label>Adres</label>
               <textarea
                 id="textarea"
                 type="text"
@@ -47,7 +50,7 @@ const ShippingScreen = ({ history }) => {
               />
             </div>
             <div className="inputbox">
-              <label>Postal Code</label>
+              <label>Posta Kodu</label>
               <input
                 type="text"
                 value={postalCode}

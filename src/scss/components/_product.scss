@@ -45,7 +45,7 @@
         font-size: 1.7rem;
         background: $white;
         color: $red;
-        border: none;
+        border: 1px solid transparent;
         border-radius: 5px;
         padding: 0.8rem;
 
@@ -78,35 +78,36 @@
   overflow: hidden;
 
   &__bottom {
-    background: $white-variant;
+    background: $white;
     width: 100%;
-    bottom: -45%;
+    bottom: -100%;
     position: absolute;
-    transition: all 0.5s ease;
     color: $red;
-    padding: 1rem;
+    padding: 0.6rem;
   }
   &:hover {
     cursor: pointer;
   }
   &:hover .product__bottom {
     bottom: 0%;
-    transition: all 0.5s ease;
   }
   a {
     color: black;
   }
 
   &__btn {
-    padding: 0.5rem;
+    padding: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     button {
-      color: $red;
-      border-radius: 0.2rem;
-      padding: 0.7rem;
+      color: $white;
+      padding: 1rem;
+      background: $red;
       border: none;
-      margin: 0.2rem;
+      margin: 0.6rem;
       &:hover {
-        background-color: $white-variant;
+        background-color: $red2;
         cursor: pointer;
       }
     }

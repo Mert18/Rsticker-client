@@ -1,16 +1,6 @@
 .home {
   grid-column: 1 / -1;
 }
-.home__bg {
-  object-fit: cover;
-  max-width: 100%;
-  height: auto;
-  img {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-  }
-}
 
 .products {
   display: flex;
@@ -22,7 +12,7 @@
 
 .search {
   padding: 0.5rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
