@@ -9,22 +9,10 @@ const Product = ({ product, history, match }) => {
   return (
     <div className="product">
       <div className="product__image">
-        <img src={product.image} alt={product.description} width="300px" />
+        <img src={product.image} alt={product.description} width="220px" />
       </div>
       <div className="product__bottom">
-        <div className="product__name">
-          <p>{product.name}</p>
-        </div>
-        <div className="product__btn">
-          <Link to={`/product/${product._id}`}>
-            <button>
-              <p>İNCELE</p>
-            </button>
-          </Link>
-          <button onClick={addToCartHandler}>
-            <p>SEPETE EKLE</p>
-          </button>
-        </div>
+        <p>Click to add to cart</p>
       </div>
     </div>
   );

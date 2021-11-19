@@ -21,14 +21,6 @@ const Layout = ({ children }) => {
   return (
     <Fragment>
       {widthD < 900 ? <Burger /> : <Header />}
-      <div className="cart-absolute">
-        <div className="cart-absolute-icon">
-          <Link to="/cart">
-            <i class="fas fa-shopping-cart"></i>
-            <div className="cart-absolute-icon-qty">{cartItems.length}</div>
-          </Link>
-        </div>
-      </div>
       <div className="container">{children}</div>
       <Footer />
     </Fragment>

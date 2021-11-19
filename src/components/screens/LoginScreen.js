@@ -5,10 +5,14 @@ import { login } from "../../actions/userActions.js";
 import Layout from "../../core/Layout.js";
 
 const LoginScreen = ({ location, history }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
 
+  const [registerName, setRegisterName] = useState("");
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+
+  const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { loading, error, userInfo } = userLogin;
 
@@ -21,40 +25,84 @@ const LoginScreen = ({ location, history }) => {
   }, [history, userInfo, redirect]);
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(login(email, password));
+    dispatch(login(loginEmail, loginPassword));
   };
 
   return (
     <Layout>
       <div className="login">
-        <div className="formwrapper">
-          <div className="messages">
-            <div className="message-error">{error && <p>{error}</p>}</div>
-          </div>
-          <div className="title">
-            <h2>Giriş Yap</h2>
-          </div>
-          <form onSubmit={submitHandler} className="form">
-            <div className="inputbox">
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              ></input>
+        <div className="login__login">
+          <div className="formwrapper">
+            <div className="messages">
+              <div className="message-error">{error && <p>{error}</p>}</div>
             </div>
-            <div className="inputbox">
-              <label htmlFor="password">Şifre</label>
-              <input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              ></input>
+            <div className="title">
+              <h2>LOGIN</h2>
             </div>
-            <button type="submit"></button>
-          </form>
+            <form onSubmit={submitHandler} className="form">
+              <div className="inputbox">
+                <label htmlFor="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  value={loginEmail}
+                  onChange={(e) => setLoginEmail(e.target.value)}
+                ></input>
+              </div>
+              <div className="inputbox">
+                <label htmlFor="password">Password</label>
+                <input
+                  id="password"
+                  type="password"
+                  value={loginPassword}
+                  onChange={(e) => setLoginPassword(e.target.value)}
+                ></input>
+              </div>
+              <button type="submit"></button>
+            </form>
+          </div>
+        </div>
+
+        <div className="login__register">
+          <div className="formwrapper">
+            <div className="messages">
+              <div className="message-error">{error && <p>{error}</p>}</div>
+            </div>
+            <div className="title">
+              <h2>REGISTER</h2>
+            </div>
+            <form onSubmit={submitHandler} className="form">
+              <div className="inputbox">
+                <label htmlFor="name">Name</label>
+                <input
+                  id="name"
+                  type="name"
+                  value={registerName}
+                  onChange={(e) => setRegisterName(e.target.value)}
+                ></input>
+              </div>
+
+              <div className="inputbox">
+                <label htmlFor="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  value={registerEmail}
+                  onChange={(e) => setRegisterEmail(e.target.value)}
+                ></input>
+              </div>
+              <div className="inputbox">
+                <label htmlFor="password">Password</label>
+                <input
+                  id="password"
+                  type="password"
+                  value={registerPassword}
+                  onChange={(e) => setRegisterPassword(e.target.value)}
+                ></input>
+              </div>
+              <button type="submit"></button>
+            </form>
+          </div>
         </div>
       </div>
     </Layout>

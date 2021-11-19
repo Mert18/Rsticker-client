@@ -53,37 +53,26 @@ const Navbar = ({ match }) => {
 
   return (
     <header className="nav" style={scState(scrollState)}>
-      <div className="nav__left">
-        <div className="nav__left__back"></div>
-        <div className="nav__left__front">
-          <Link to="/">rsticker.net</Link>
-        </div>
-      </div>
+      <div className="nav__left"></div>
       <div className="nav__middle">
         <Link to="/" style={isActive("/")}>
-          Ana Sayfa
+          Home
         </Link>
-        <Link to="/custom" style={isActive("/custom")}>
-          Özel
+        <Link to="/categories" style={isActive("/categories")}>
+          Categories
         </Link>
       </div>
       {userInfo ? (
         <div className="nav__right">
           <Link to="/profile" style={isActive("/profile")}>
-            Profil
-          </Link>
-          <Link to="/cart" style={isActive("/cart")}>
-            Sepet
+            Profile
           </Link>
           <button onClick={logoutHandler}>Çıkış Yap</button>
         </div>
       ) : (
         <div className="nav__right">
           <Link to="/login" style={isActive("/login")}>
-            Giriş Yap
-          </Link>
-          <Link to="/register" style={isActive("/register")}>
-            Kayıt Ol
+            Login / Register
           </Link>
         </div>
       )}

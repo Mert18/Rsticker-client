@@ -15,21 +15,6 @@ const HomeScreen = () => {
 
   return (
     <section className="home">
-      <article className="search">
-        <div className="search__input">
-          <input
-            type="text"
-            placeholder="Ara"
-            value={filt}
-            onChange={(e) => setFilt(e.target.value)}
-          />
-        </div>
-        <div className="search__filters">
-          <p>Categories</p>
-          <p>New</p>
-          <p>Popular</p>
-        </div>
-      </article>
       {loading ? (
         <h2>Loading</h2>
       ) : (
