@@ -31,11 +31,11 @@ const LoginScreen = ({ location, history }) => {
   return (
     <Layout>
       <div className="login">
+        <div className="messages">
+          <div className="message-error">{error && <p>{error}</p>}</div>
+        </div>
         <div className="login__login">
           <div className="formwrapper">
-            <div className="messages">
-              <div className="message-error">{error && <p>{error}</p>}</div>
-            </div>
             <div className="title">
               <h2>LOGIN</h2>
             </div>
@@ -65,9 +65,6 @@ const LoginScreen = ({ location, history }) => {
 
         <div className="login__register">
           <div className="formwrapper">
-            <div className="messages">
-              <div className="message-error">{error && <p>{error}</p>}</div>
-            </div>
             <div className="title">
               <h2>REGISTER</h2>
             </div>

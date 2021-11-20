@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
   }, [width]);
   return (
     <Fragment>
-      {widthD < 900 ? <Burger /> : <Header />}
+      {widthD < 900 ? <Header /> : <Header />}
       <div className="container">{children}</div>
       <Footer />
     </Fragment>

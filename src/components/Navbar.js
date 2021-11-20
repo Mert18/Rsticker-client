@@ -53,8 +53,7 @@ const Navbar = ({ match }) => {
 
   return (
     <header className="nav" style={scState(scrollState)}>
-      <div className="nav__left"></div>
-      <div className="nav__middle">
+      <div className="nav__normal">
         <Link to="/" style={isActive("/")}>
           Home
         </Link>
@@ -63,14 +62,14 @@ const Navbar = ({ match }) => {
         </Link>
       </div>
       {userInfo ? (
-        <div className="nav__right">
+        <div className="nav__auth">
           <Link to="/profile" style={isActive("/profile")}>
             Profile
           </Link>
           <button onClick={logoutHandler}>Çıkış Yap</button>
         </div>
       ) : (
-        <div className="nav__right">
+        <div className="nav__auth">
           <Link to="/login" style={isActive("/login")}>
             Login / Register
           </Link>

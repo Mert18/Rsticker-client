@@ -12,7 +12,7 @@ const Product = ({ product, history, match }) => {
         <img src={product.image} alt={product.description} width="220px" />
       </div>
       <div className="product__bottom">
-        <p>Click to add to cart</p>
+        <img src="/icons/cart.svg" width="40px" height="40px" alt="cart" />
       </div>
     </div>
   );

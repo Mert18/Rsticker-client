@@ -2,27 +2,35 @@
   color: $red;
 }
 
+
 .login{
   display: grid;
   grid-template-columns: 4fr 6fr 2fr 6fr 4fr;
-  grid-template-rows: 15vh auto 15vh;
-  grid-template-areas: ". . . . ."
+  grid-template-rows: 15vh auto auto;
+  grid-template-areas: ". message message message ."
   ". login . register ."
   ". . . . .";
 } 
 
+.messages{
+  grid-area: message;
+  width: 100%;
+  text-align: center;
+}
 .login__login{
   grid-area: login;
   padding: 2rem;
   border: 1px solid $red;
   -webkit-box-shadow: -2px 2px 31px -10px rgba(0,0,0,0.75);
--moz-box-shadow: -2px 2px 31px -10px rgba(0,0,0,0.75);
-box-shadow: -2px 2px 31px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: -2px 2px 31px -10px rgba(0,0,0,0.75);
+  box-shadow: -2px 2px 31px -10px rgba(0,0,0,0.75);
+  margin-bottom: 3rem;
+
 }
 
 .formwrapper{
   padding: 1rem;
-  min-height: 40vh;
+  margin: 2rem 0rem;
   .messages{
     text-align: center;
     padding: .4rem;
@@ -72,4 +80,22 @@ box-shadow: -2px 2px 31px -10px rgba(0,0,0,0.75);
   -webkit-box-shadow: -2px 2px 31px -10px rgba(0,0,0,0.75);
 -moz-box-shadow: -2px 2px 31px -10px rgba(0,0,0,0.75);
 box-shadow: -2px 2px 31px -10px rgba(0,0,0,0.75);
+}
+
+
+@media(max-width: 1100px){
+  .login{
+    grid-template-areas: ". message message message ."
+    ". login login login ."
+    ". register register register .";
+  }
+}
+
+@media(max-width: 600px){
+  .login{
+    grid-template-areas: "message message message message message"
+    "login login login login login"
+    "register register register register register";
+  
+}
 }

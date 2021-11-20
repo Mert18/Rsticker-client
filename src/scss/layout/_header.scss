@@ -1,78 +1,24 @@
 .nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   height: 14vh;
   top: 0%;
   width: 100%;
   background: $white;
   z-index: 9999;
+  padding-left: 3rem;
 }
 
-.nav__left {
-  position: relative;
-
-  &__front {
-    z-index: 9999;
-    padding: 1rem;
-    a {
-      color: $primary;
-      font-size: 1.7rem;
-    }
-  }
-  &__back {
-    background-color: $red;
-    z-index: -99;
-    width: 80%;
-    top: -80%;
-    height: 100%;
-    position: absolute;
-  }
+.nav__normal a{
+  margin-right: 3rem;
 }
-.nav__middle {
-  a {
-    margin-right: 2rem;
-    &:last-child {
-      margin-right: 0rem;
-    }
-  }
-}
-.nav__right {
-  a {
-    margin-right: 2rem;
-    &:last-child {
-      margin-right: 0rem;
-    }
-  }
 
-  button {
-    background: transparent;
-    border: none;
-    outline: none;
-    color: $red;
-    font-weight: 700;
-    &:hover {
-      cursor: pointer;
-      color: $primary;
-    }
+.nav__auth{
+  margin-left: 4rem;
+
+  a{
+    margin-right: 3rem;
   }
 }
 
-// Burger menu
-.burger {
-  height: 10vh;
-  background-color: $white-variant;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.burger__logo a {
-  color: $primary;
-}
-.burger__user a {
-  color: $red;
-  margin: 0rem 1rem;
-}
-.burger__logo {
-  font-size: 1.2rem;
-}
