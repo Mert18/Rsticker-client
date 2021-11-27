@@ -1,24 +1,39 @@
-.nav {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 14vh;
-  top: 0%;
-  width: 100%;
-  background: $white;
-  z-index: 9999;
-  padding-left: 3rem;
+.nav__container {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". nav .";
 }
 
-.nav__normal a{
+.nav {
+  grid-area: nav;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 9vh;
+}
+
+.nav__normal a {
   margin-right: 3rem;
 }
 
-.nav__auth{
-  margin-left: 4rem;
+.nav__normal button {
+  background: transparent;
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
+  font-weight: 300;
 
-  a{
-    margin-right: 3rem;
+  &:hover {
+    cursor: pointer;
   }
 }
 
+.nav__auth {
+  margin-left: 4rem;
+
+  a {
+    margin-right: 3rem;
+  }
+}

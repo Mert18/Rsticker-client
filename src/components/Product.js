@@ -9,7 +9,7 @@ const Product = ({ product, history, match }) => {
   return (
     <div className="product">
       <div className="product__image">
-        <img src={product.image} alt={product.description} width="220px" />
+        <img src={product.image} alt={product.description} width="170px" />
       </div>
       <div className="product__bottom">
         <img src="/icons/cart.svg" width="40px" height="40px" alt="cart" />
